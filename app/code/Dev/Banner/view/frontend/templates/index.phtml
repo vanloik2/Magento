@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @var Dev\Banner\Block\Index $block
+ */
+
+    print_r($block->sayHello());
+
+?>
+
+<style>
+    table {  font-family: arial, sans-serif; text-align: center;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    th,td{
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+</style>
+<h2>List Banner</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Short Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <?php foreach ($block->getDataBanner() as $banner)
+            {
+                echo '<tr>
+                    <td>'.$banner->getBannerId().'</td>
+                    <td>'.$banner->getName().'</td>
+                    <td>
+                        <img src="'. 'http://magento.conf/media/dev/tmp/banner/' .$banner->getImage() .'" width="100px" height="100px">
+                    </td>
+                    <td>'.$banner->getStatus().'</td>
+                    <td>'.$banner->getShortDescription().'</td>
+                  </tr>';
+            }
+        ?>
+    </tr>
+    </tbody>
+</table>
+
+
