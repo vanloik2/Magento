@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @var Dev\Banner\Block\TopBanner $block
+ */
+
+    $banner = $block->getImageChangeBanner()[0];
+    $url = $block->getImageChangeBanner()[1];
+
+//    css ẩn banner gốc nếu tồn tại $banner
+
+    if(!empty($banner)) {
+        echo
+        '
+        <style>
+            .block-promo{
+                display: none;
+            }
+        </style>
+        ';
+    }
+
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <section class="regular slider">
+        <?php
+            foreach ($banner as $value) {
+                echo
+                '
+                <div>
+                    <img src="'.$url.$value['image'].'" style="width: 100%; " />
+                </div>
+                ';
+            }
+        ?>
+    </section>
+</body>
+</html>
+
+
+
+
+

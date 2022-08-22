@@ -1,70 +1,64 @@
 <?php
-
 namespace Dev\Banner\Ui\Component\Banner\Listing\Column;
 
-use Magento\Catalog\Helper\Image;
 use Magento\Framework\UrlInterface;
-use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
+use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Ui\Component\Listing\Columns\Column;
 
 class Thumbnail extends Column
 {
-    const ALT_FIELD = 'title';
-
+    const URL_IMAGE = 'dev/tmp/banner/';
     /**
-     * @var \Magento\Store\Model\StoreManagerInterface
+     * @var StoreManagerInterface
      */
     protected $storeManager;
+    /**
+     * @var UrlInterface
+     */
+    protected $url;
 
     /**
+     * Image constructor.
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
-     * @param Image $imageHelper
-     * @param UrlInterface $urlBuilder
      * @param StoreManagerInterface $storeManager
+     * @param UrlInterface $url
      * @param array $components
      * @param array $data
      */
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
-        Image $imageHelper,
-        UrlInterface $urlBuilder,
         StoreManagerInterface $storeManager,
+        UrlInterface $url,
         array $components = [],
         array $data = []
     ) {
-        $this->storeManager = $storeManager;
-        $this->imageHelper = $imageHelper;
-        $this->urlBuilder = $urlBuilder;
         parent::__construct($context, $uiComponentFactory, $components, $data);
+        $this->storeManager = $storeManager;
+        $this->url = $url;
     }
 
-    /**
-     * Prepare Data Source
-     *
-     * @param array $dataSource
-     *
-     * @return array
-     */
     public function prepareDataSource(array $dataSource)
     {
+        $mediaUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
+
         if (isset($dataSource['data']['items'])) {
-            $fieldName = $this->getData('name');
-            foreach($dataSource['data']['items'] as &$item) {
-                $url = '';
-                if($item[$fieldName] != '') {
-                    $url = $this->storeManager->getStore()->getBaseUrl(
-                            UrlInterface::URL_TYPE_MEDIA
-                        ) . 'dev/tmp/banner/' . $item[$fieldName];
+            $fieldName = 'image';
+            foreach ($dataSource['data']['items'] as & $item) {
+
+                if (!empty($item['image'])) {
+                    $name = $item['image'];
+                    $item[$fieldName . '_src'] = $mediaUrl.static::URL_IMAGE.$name;
+                    $item[$fieldName . '_alt'] = '';
+                    $item[$fieldName . '_orig_src'] = $mediaUrl.static::URL_IMAGE.$name;
                 }
-                $item[$fieldName . '_src'] = $url;
-                $item[$fieldName . '_orig_src'] = $url;
             }
         }
 
         return $dataSource;
     }
+
 }

@@ -3,6 +3,7 @@
     <module name="Dev_Banner" >
         <sequence>
 <!--            <module name="Dev_Catalog" />-->
+                <module name="Catalog_Cms" />
         </sequence>
     </module>
 </config>

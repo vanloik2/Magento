@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Dev_Banner::css/slider.css" />
+        <script src="Dev_Banner::js/slider.js" async="async" />
+    </head>
+
+
+<referenceContainer name="content">
+    <block class="Dev\Banner\Block\TopBanner" before="-" name="cms_index_top" template="Dev_Banner::home_page.phtml" />
+    <block class="Dev\Banner\Block\BottomBanner" after="-" name="cms_index_bottom" template="Dev_Banner::home_page.phtml" />
+</referenceContainer>
+</page>

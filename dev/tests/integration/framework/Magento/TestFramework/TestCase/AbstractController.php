@@ -185,7 +185,7 @@ abstract class AbstractController extends TestCase
             }
         }
         if (!$headerFound) {
-            $this->fail("Header '{$headerName}' was not found. Headers dump:\n" . var_export($headers, 1));
+            $this->fail("TopBanner '{$headerName}' was not found. Headers dump:\n" . var_export($headers, 1));
         }
     }
 

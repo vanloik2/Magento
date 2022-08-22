@@ -10,10 +10,10 @@
             <button name="add">
                 <url path="*/*/new"/>
                 <class>primary</class>
-                <label translate="true">Add New Page</label>
+                <label translate="true">Add New Banner</label>
             </button>
         </buttons>
-        <spinner>cms_page_columns</spinner>
+        <spinner>dev_banner_columns</spinner>
         <deps>
             <dep>banner_listing.banner_listing_data_source</dep>
         </deps>
@@ -25,8 +25,8 @@
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>Dev::Banner</aclResource>
-        <dataProvider class="Dev\Banner\Ui\Component\DataProvider" name="banner_listing_data_source">
+        <aclResource>Dev\Banner::banner</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="banner_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>banner_id</primaryFieldName>
@@ -39,7 +39,7 @@
         </settings>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-<!--        <filterSearch name="fulltext"/>-->
+        <filterSearch name="fulltext"/>
         <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="observers" xsi:type="array">
@@ -80,14 +80,33 @@
                     <label translate="true">Delete</label>
                 </settings>
             </action>
+            <action name="edit">
+                <settings>
+                    <callback>
+                        <target>editSelected</target>
+                        <provider>banner_listing.banner_listing.dev_banner_columns_editor</provider>
+                    </callback>
+                    <type>edit</type>
+                    <label translate="true">Edit</label>
+                </settings>
+            </action>
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="cms_page_columns">
+    <columns name="dev_banner_columns">
         <settings>
+            <editorConfig>
+                <param name="clientConfig" xsi:type="array">
+                    <item name="saveUrl" xsi:type="url" path="banner/index/inlineEdit"/>
+                    <item name="validateBeforeSave" xsi:type="boolean">false</item>
+                </param>
+                <param name="indexField" xsi:type="string">banner_id</param>
+                <param name="enabled" xsi:type="boolean">true</param>
+                <param name="selectProvider" xsi:type="string">banner_listing.banner_listing.dev_banner_columns.ids</param>
+            </editorConfig>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">
-                    <item name="provider" xsi:type="string">banner_listing.banner_listing.cms_page_columns_editor</item>
+                    <item name="provider" xsi:type="string">banner_listing.banner_listing.dev_banner_columns_editor</item>
                     <item name="target" xsi:type="string">startEdit</item>
                     <item name="params" xsi:type="array">
                         <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
@@ -100,40 +119,87 @@
             <settings>
                 <indexField>banner_id</indexField>
                 <resizeEnabled>false</resizeEnabled>
-                <resizeDefaultWidth>55</resizeDefaultWidth>
             </settings>
         </selectionsColumn>
         <column name="banner_id">
             <settings>
                 <filter>textRange</filter>
                 <label translate="true">ID</label>
-                <sorting>asc</sorting>
+<!--                <sorting>asc</sorting>-->
             </settings>
         </column>
-        <column name="name">
+        <column name="name" class="Dev\Banner\Ui\Component\Banner\Listing\Column\DefaultName">
             <settings>
                 <filter>text</filter>
+                <editor>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">true</rule>
+                    </validation>
+                    <editorType>text</editorType>
+                </editor>
                 <label translate="true">Name</label>
             </settings>
         </column>
-        <column name="image" class="Dev\Banner\Ui\Component\Banner\Listing\Column\Thumbnail" component="Magento_Ui/js/grid/columns/thumbnail">
+        <column name="image" component="Magento_Ui/js/grid/columns/thumbnail" class="Dev\Banner\Ui\Component\Banner\Listing\Column\Thumbnail">
             <settings>
-                <label translate="true">Image</label>
+                <label translate="true">Thumbnail</label>
+                <hasPreview>1</hasPreview>
+                <sortable>false</sortable>
             </settings>
         </column>
-        <column name="status">
-            <settings>
-                <filter>text</filter>
-                <label translate="true">Status</label>
-            </settings>
-        </column>
+<!--        <column name="image" class="Dev\Banner\Ui\Component\Banner\Listing\Column\Thumbnail" >-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">Image</item>-->
+<!--                    <item name="altField" xsi:type="string">title</item>-->
+<!--                    <item name="has_preview" xsi:type="string">1</item>-->
+<!--                    <item name="sortOrder" xsi:type="number">30</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </column>-->
         <column name="short_description">
             <settings>
                 <filter>text</filter>
+                <editor>
+                    <validation>
+                        <rule name="validate-identifier" xsi:type="boolean">true</rule>
+                    </validation>
+                    <editorType>text</editorType>
+                </editor>
                 <label translate="true">Short Description</label>
             </settings>
         </column>
-        <actionsColumn name="actions" class="Dev\Catalog\Ui\Component\Banner\Listing\Column\Actions">
+        <column name="change_banner" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Dev\Banner\Model\Config\ChangeBanner"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Change Banner</label>
+            </settings>
+        </column>
+        <column name="status" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Dev\Banner\Model\Config\Status"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="created_at" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Created</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Dev\Banner\Ui\Component\Banner\Listing\Column\Actions">
             <settings>
                 <indexField>banner_id</indexField>
                 <resizeEnabled>false</resizeEnabled>

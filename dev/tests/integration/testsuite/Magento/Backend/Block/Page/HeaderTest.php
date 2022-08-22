@@ -6,7 +6,7 @@
 namespace Magento\Backend\Block\Page;
 
 /**
- * Test \Magento\Backend\Block\Page\Header
+ * Test \Magento\Backend\Block\Page\TopBanner
  * @magentoAppArea adminhtml
  */
 class HeaderTest extends \PHPUnit\Framework\TestCase

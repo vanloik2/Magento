@@ -322,7 +322,7 @@ MUTATION;
     }
 
     /**
-     * Get customer Header
+     * Get customer TopBanner
      *
      * @param string $email
      * @param string $password
