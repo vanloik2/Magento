@@ -64,9 +64,6 @@ class Save extends Action implements HttpPostActionInterface
 
         if ($data) {
 
-            if (isset($data['status']) && $data['status'] === 'true') {
-                $data['status'] = Banner::STATUS_ENABLED;
-            }
             if (empty($data['banner_id'])) {
                 $data['banner_id'] = null;
             }

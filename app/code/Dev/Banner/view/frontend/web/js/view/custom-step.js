@@ -6,13 +6,9 @@ define([
 ], function (ko, Component, _, stepNavigator) {
     'use strict';
 
-    /**
-     * mystep - is the name of the component's .html template,
-     * <Vendor>_<Module>  - is the name of your module directory.
-     */
     return Component.extend({
         defaults: {
-            template: 'Dev_Banner/my-step'
+            template: 'Dev_Banner/mystep'
         },
 
         // add here your logic to display step,
@@ -31,7 +27,7 @@ define([
                 // step alias
                 null,
                 // step title value
-                'Step Title',
+                'Test Custom Step',
                 // observable property with logic when display step or hide step
                 this.isVisible,
 
@@ -48,13 +44,6 @@ define([
 
             return this;
         },
-
-        /**
-         * The navigate() method is responsible for navigation between checkout steps
-         * during checkout. You can add custom logic, for example some conditions
-         * for switching to your custom step
-         * When the user navigates to the custom step via url anchor or back button we_must show step manually here
-         */
         navigate: function () {
             this.isVisible(true);
         },
