@@ -48,7 +48,7 @@ class UrlRewriteHandlerTest extends TestCase
     }
 
     /**
-     * Checks category URLs rewrites generation with enabled `Use Category Path for Product URLs` option and
+     * Checks category URLs rewrites generation with enabled `Use Categories Path for Product URLs` option and
      * store's specific product URL key.
      *
      * @magentoDataFixture Magento/CatalogUrlRewrite/Fixtures/product_custom_url_key.php

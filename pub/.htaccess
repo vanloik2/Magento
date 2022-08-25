@@ -113,7 +113,7 @@
     #SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
 
     # Make sure proxies don't deliver the wrong content
-    #TopBanner append Vary User-Agent env=!dont-vary
+    #Header append Vary User-Agent env=!dont-vary
 
 </IfModule>
 

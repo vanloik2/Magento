@@ -4,6 +4,8 @@
         <sequence>
 <!--            <module name="Dev_Catalog" />-->
                 <module name="Catalog_Cms" />
+                <module name="Magento_Widget" />
+                <module name="Magento_CatalogWidget"/>
         </sequence>
     </module>
 </config>

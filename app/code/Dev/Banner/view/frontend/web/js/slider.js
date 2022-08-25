@@ -1,6 +1,13 @@
 require(['jquery', 'jquery/ui', 'slick'], function($) {
     $(document).ready(function() {
-        $(".regular").slick({
+        $(".slick-slider").slick({
+            dots: true,
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true
+        });
+        $('.regular').slick({
             autoplay: true,
             dots: true,
             responsive: [{

@@ -922,7 +922,7 @@ QUERY;
 }
 QUERY;
         $response = $this->graphQlQuery($query);
-        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Category must not be empty");
+        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Categories must not be empty");
         /** @var CategoryRepositoryInterface $categoryRepository */
         $categoryRepository = ObjectManager::getInstance()->get(CategoryRepositoryInterface::class);
         $categoryIds  = [3, 4, 5];
@@ -982,7 +982,7 @@ QUERY;
         $categoryIds  = [3, 4, 5];
 
         $response = $this->graphQlQuery($query);
-        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Category must not be empty");
+        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Categories must not be empty");
 
         $productItemsInResponse = $response['products']['items'];
         $this->assertCount(1, $productItemsInResponse);
@@ -1045,7 +1045,7 @@ QUERY;
         $categoryIds  = [4, 5];
 
         $response = $this->graphQlQuery($query);
-        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Category must not be empty");
+        $this->assertNotEmpty($response['products']['items'][0]['categories'], "Categories must not be empty");
 
         $productItemsInResponse = $response['products']['items'];
         $this->assertCount(1, $productItemsInResponse);

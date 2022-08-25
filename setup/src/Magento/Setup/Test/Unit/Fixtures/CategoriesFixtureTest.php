@@ -174,7 +174,7 @@ class CategoriesFixtureTest extends TestCase
     public function testIntroduceParamLabels()
     {
         $this->assertSame([
-            'categories' => 'Category'
+            'categories' => 'Categories'
         ], $this->model->introduceParamLabels());
     }
 }

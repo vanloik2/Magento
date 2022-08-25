@@ -252,7 +252,7 @@ class CategoriesFixture extends Fixture
     public function introduceParamLabels()
     {
         return [
-            'categories' => 'Category'
+            'categories' => 'Categories'
         ];
     }
 }

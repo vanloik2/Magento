@@ -6,7 +6,7 @@ define([
     'tests/assets/tools',
     'tests/assets/apply/components/fn',
     'text!./config.json',
-    'text!./template/node.html'
+    'text!./templates/node.html'
 ], function (tools, fnComponent, config, nodeTmpl) {
     'use strict';
 

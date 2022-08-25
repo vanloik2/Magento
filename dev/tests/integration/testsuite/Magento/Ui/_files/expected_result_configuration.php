@@ -32,7 +32,7 @@ return ['arguments' => [
             'template' => [
                 'name' => 'template',
                 'xsi:type' => 'string',
-                'value' => 'template/listing/default',
+                'value' => 'templates/listing/default',
             ],
             'spinner' => [
                 'name' => 'spinner',

@@ -4,7 +4,6 @@ namespace Dev\Banner\Block;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Template;
 use Magento\Backend\Block\Template\Context;
-use Dev\Banner\Model\BannerFactory;
 use Dev\Banner\Model\BannerRepository;
 use Dev\Banner\Model\ResourceModel\Banner\CollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
@@ -12,20 +11,17 @@ use Magento\Store\Model\StoreManagerInterface;
 class TopBanner extends Template
 {
 
-    protected $bannerFactory;
     protected $bannerRepository;
     protected $collectionFactory;
 
     public function __construct(
         Context $context,
-        BannerFactory $bannerFactory,
         BannerRepository $bannerRepository,
         CollectionFactory $collectionFactory,
         StoreManagerInterface $storeManager,
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->bannerFactory = $bannerFactory;
         $this->bannerRepository = $bannerRepository;
         $this->_collectionFactory = $collectionFactory;
         $this->storeManager = $storeManager;
