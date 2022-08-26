@@ -10,7 +10,7 @@ namespace Magento\GraphQl\Catalog;
 use Magento\TestFramework\TestCase\GraphQlAbstract;
 
 /**
- * Test cases for product media gallery data retrieval.
+ * Test cases for product web gallery data retrieval.
  */
 class MediaGalleryTest extends GraphQlAbstract
 {

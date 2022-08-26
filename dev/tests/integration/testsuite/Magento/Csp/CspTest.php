@@ -66,7 +66,7 @@ class CspTest extends AbstractController
         $this->assertTrue($this->searchInResponse($response, 'font-src'));
         //Policies configured in cps_whitelist.xml files
         $this->assertTrue($this->searchInResponse($response, 'object-src'));
-        $this->assertTrue($this->searchInResponse($response, 'media-src'));
+        $this->assertTrue($this->searchInResponse($response, 'web-src'));
     }
 
     /**

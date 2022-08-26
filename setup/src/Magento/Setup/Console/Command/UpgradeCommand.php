@@ -165,7 +165,7 @@ class UpgradeCommand extends AbstractSetupCommand
             }
             $output->writeln(
                 "<info>Media files stored outside of 'Media Gallery Allowed' folders"
-                . " will not be available to the media gallery.</info>"
+                . " will not be available to the web gallery.</info>"
             );
             $output->writeln(
                 '<info>Please refer to Developer Guide for more details.</info>'

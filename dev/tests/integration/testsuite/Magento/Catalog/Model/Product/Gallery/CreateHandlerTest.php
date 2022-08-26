@@ -15,7 +15,7 @@ use Magento\Framework\ObjectManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
 
 /**
- * Provides tests for media gallery images creation during product save.
+ * Provides tests for web gallery images creation during product save.
  *
  * @magentoDataFixture Magento/Catalog/_files/product_simple.php
  * @magentoDataFixture Magento/Catalog/_files/product_image.php

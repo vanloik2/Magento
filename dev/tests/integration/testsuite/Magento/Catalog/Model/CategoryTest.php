@@ -203,7 +203,7 @@ class CategoryTest extends TestCase
     {
         $this->assertFalse($this->_model->getImageUrl());
         $this->_model->setImage('test.gif');
-        $this->assertStringEndsWith('media/catalog/category/test.gif', $this->_model->getImageUrl());
+        $this->assertStringEndsWith('web/catalog/category/test.gif', $this->_model->getImageUrl());
     }
 
     public function testGetCustomDesignDate(): void

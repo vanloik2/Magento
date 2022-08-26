@@ -111,7 +111,7 @@ class BackupCommandTest extends TestCase
         $this->backupRollback->expects($this->once())
             ->method('codeBackup')
             ->willReturn($this->backupRollback);
-        $this->tester->execute(['--media' => true]);
+        $this->tester->execute(['--web' => true]);
     }
 
     public function testExecuteDBBackup()

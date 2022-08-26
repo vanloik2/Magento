@@ -223,7 +223,7 @@ class ImagesFixture extends Fixture
     }
 
     /**
-     * Create image file and add it to media gallery table in DB
+     * Create image file and add it to web gallery table in DB
      *
      * @return void
      */
@@ -246,7 +246,7 @@ class ImagesFixture extends Fixture
     }
 
     /**
-     * Create generator that creates image files and puts them to appropriate media folder
+     * Create generator that creates image files and puts them to appropriate web folder
      * in memory-safe way
      *
      * @return \Generator

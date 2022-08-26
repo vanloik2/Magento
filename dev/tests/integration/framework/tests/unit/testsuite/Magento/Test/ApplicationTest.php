@@ -356,7 +356,7 @@ class ApplicationTest extends \PHPUnit\Framework\TestCase
             '%s',
             $dir,
             'MAGE_DIRS[etc][path]=%s/etc&MAGE_DIRS[var][path]=%s/var&' .
-            'MAGE_DIRS[var_export][path]=%s/var/export&MAGE_DIRS[media][path]=%s/pub/media&' .
+            'MAGE_DIRS[var_export][path]=%s/var/export&MAGE_DIRS[web][path]=%s/pub/web&' .
             'MAGE_DIRS[static][path]=%s/pub/static&' .
             'MAGE_DIRS[view_preprocessed][path]=%s/var/view_preprocessed/pub/static&' .
             'MAGE_DIRS[code][path]=%s/generated/code&MAGE_DIRS[cache][path]=%s/var/cache&' .

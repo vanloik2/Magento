@@ -279,7 +279,7 @@ class UploadTest extends AbstractBackendController
     }
 
     /**
-     * Returns absolute path to file in media tmp dir.
+     * Returns absolute path to file in web tmp dir.
      *
      * @param string $tmpPath
      * @return string

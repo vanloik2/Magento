@@ -50,7 +50,7 @@ class CategoryWithDescriptionDirectivesTest extends GraphQlAbstract
         $categoryRepository = ObjectManager::getInstance()->get(CategoryRepositoryInterface::class);
         /** @var CategoryInterface $category */
         $category = $categoryRepository->get($categoryId);
-        $category->setDescription('Test: {{media url="' . $mediaFilePath . '"}}');
+        $category->setDescription('Test: {{web url="' . $mediaFilePath . '"}}');
         $categoryRepository->save($category);
 
         $query = <<<QUERY
@@ -62,7 +62,7 @@ class CategoryWithDescriptionDirectivesTest extends GraphQlAbstract
 QUERY;
         $response = $this->graphQlQuery($query);
 
-        self::assertStringNotContainsString('media url', $response['category']['description']);
+        self::assertStringNotContainsString('web url', $response['category']['description']);
         self::assertStringContainsString($storeBaseUrl, $response['category']['description']);
     }
 }

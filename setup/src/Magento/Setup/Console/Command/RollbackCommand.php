@@ -18,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
- * Command to rollback code, media and DB
+ * Command to rollback code, web and DB
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -28,7 +28,7 @@ class RollbackCommand extends AbstractSetupCommand
      * Name of input arguments or options
      */
     const INPUT_KEY_CODE_BACKUP_FILE = 'code-file';
-    const INPUT_KEY_MEDIA_BACKUP_FILE = 'media-file';
+    const INPUT_KEY_MEDIA_BACKUP_FILE = 'web-file';
     const INPUT_KEY_DB_BACKUP_FILE = 'db-file';
 
     /**
@@ -95,7 +95,7 @@ class RollbackCommand extends AbstractSetupCommand
                 self::INPUT_KEY_MEDIA_BACKUP_FILE,
                 'm',
                 InputOption::VALUE_REQUIRED,
-                'Basename of the media backup file in var/backups'
+                'Basename of the web backup file in var/backups'
             ),
             new InputOption(
                 self::INPUT_KEY_DB_BACKUP_FILE,
@@ -105,7 +105,7 @@ class RollbackCommand extends AbstractSetupCommand
             ),
         ];
         $this->setName('setup:rollback')
-            ->setDescription('Rolls back Magento Application codebase, media and database')
+            ->setDescription('Rolls back Magento Application codebase, web and database')
             ->setDefinition($options);
         parent::configure();
     }

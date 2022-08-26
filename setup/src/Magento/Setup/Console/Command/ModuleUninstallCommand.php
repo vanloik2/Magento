@@ -38,7 +38,7 @@ class ModuleUninstallCommand extends AbstractModuleCommand
      */
     const INPUT_KEY_REMOVE_DATA = 'remove-data';
     const INPUT_KEY_BACKUP_CODE = 'backup-code';
-    const INPUT_KEY_BACKUP_MEDIA = 'backup-media';
+    const INPUT_KEY_BACKUP_MEDIA = 'backup-web';
     const INPUT_KEY_BACKUP_DB = 'backup-db';
     const INPUT_KEY_NON_COMPOSER_MODULE = 'non-composer';
 
@@ -190,7 +190,7 @@ class ModuleUninstallCommand extends AbstractModuleCommand
                 self::INPUT_KEY_BACKUP_MEDIA,
                 null,
                 InputOption::VALUE_NONE,
-                'Take media backup'
+                'Take web backup'
             ),
             new InputOption(
                 self::INPUT_KEY_BACKUP_DB,

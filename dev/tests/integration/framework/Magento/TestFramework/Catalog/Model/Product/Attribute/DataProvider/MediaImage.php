@@ -13,7 +13,7 @@ use Magento\Store\Model\Store;
 use Magento\TestFramework\Eav\Model\Attribute\DataProvider\AbstractBaseAttributeData;
 
 /**
- * Product attribute data for attribute with input type media image.
+ * Product attribute data for attribute with input type web image.
  */
 class MediaImage extends AbstractBaseAttributeData
 {

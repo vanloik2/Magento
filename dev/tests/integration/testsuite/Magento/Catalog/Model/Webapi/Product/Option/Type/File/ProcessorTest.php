@@ -67,9 +67,9 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
             [
                 [
                     DirectoryList::PUB => [DirectoryList::URL_PATH => ''],
-                    DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'media'],
+                    DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'web'],
                     DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
-                    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
+                    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'web/upload'],
                 ]
             ],
         ];

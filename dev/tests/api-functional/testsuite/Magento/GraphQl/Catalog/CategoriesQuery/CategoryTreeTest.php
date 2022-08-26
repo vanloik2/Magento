@@ -606,7 +606,7 @@ QUERY;
         $this->assertArrayNotHasKey('errors', $response);
         $this->assertNotEmpty($response['categories']);
         $categories = $response['categories']['items'];
-        $storeBaseUrl = $this->objectManager->get(StoreManagerInterface::class)->getStore()->getBaseUrl('media');
+        $storeBaseUrl = $this->objectManager->get(StoreManagerInterface::class)->getStore()->getBaseUrl('web');
         $expectedImageUrl = rtrim($storeBaseUrl, '/') . '/' . ltrim($categoryModel->getImage(), '/');
         $expectedImageUrl = str_replace('index.php/', '', $expectedImageUrl);
 
@@ -665,7 +665,7 @@ QUERY;
                 'image_prefix' => ''
             ],
             'with_pub_media_strategy' => [
-                'image_prefix' => '/media/catalog/category/'
+                'image_prefix' => '/web/catalog/category/'
             ],
             'catalog_category_strategy' => [
                 'image_prefix' => 'catalog/category/'

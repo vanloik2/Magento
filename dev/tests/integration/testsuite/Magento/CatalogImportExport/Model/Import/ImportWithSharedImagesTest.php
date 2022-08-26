@@ -195,7 +195,7 @@ class ImportWithSharedImagesTest extends TestCase
     private function updateUploader(): void
     {
         $mediaDir = !$this->mediaDirectory->getDriver() instanceof Filesystem\Driver\File ?
-            'media' : $this->appParams[DirectoryList::MEDIA][DirectoryList::PATH];
+            'web' : $this->appParams[DirectoryList::MEDIA][DirectoryList::PATH];
 
         $destDir = $mediaDir . DIRECTORY_SEPARATOR . $this->mediaConfig->getBaseMediaPath();
         $tmpDir = $mediaDir . DIRECTORY_SEPARATOR . 'import/images';

@@ -110,7 +110,7 @@ class ImagesAssert
     }
 
     /**
-     * Performs assertions over product media attributes
+     * Performs assertions over product web attributes
      * e.g. image|small_image|swatch_image|thumbnail
      *
      * @param \Magento\Catalog\Model\Product $product

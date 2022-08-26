@@ -120,7 +120,7 @@ class ProductMultipleStoresTest extends ProductTestBase
     }
 
     /**
-     * Test import product into multistore system when media is disabled.
+     * Test import product into multistore system when web is disabled.
      *
      * @magentoDataFixture Magento/CatalogImportExport/Model/Import/_files/custom_category_store_media_disabled.php
      * @magentoDbIsolation enabled

@@ -148,7 +148,7 @@ class ProductTestBase extends TestCase
     }
 
     /**
-     * Copy fixture images into media import directory
+     * Copy fixture images into web import directory
      */
     public static function mediaImportImageFixture()
     {
@@ -203,7 +203,7 @@ class ProductTestBase extends TestCase
     }
 
     /**
-     * Cleanup media import and catalog directories
+     * Cleanup web import and catalog directories
      */
     public static function mediaImportImageFixtureRollback()
     {
@@ -221,7 +221,7 @@ class ProductTestBase extends TestCase
     }
 
     /**
-     * Copy incorrect fixture image into media import directory.
+     * Copy incorrect fixture image into web import directory.
      */
     public static function mediaImportImageFixtureError()
     {
@@ -484,7 +484,7 @@ class ProductTestBase extends TestCase
     }
 
     /**
-     * Returns path to media directory based on directory driver. Returns `media` for drivers different from File
+     * Returns path to web directory based on directory driver. Returns `web` for drivers different from File
      *
      * @param Filesystem\Directory\WriteInterface $directory
      * @return string
@@ -493,7 +493,7 @@ class ProductTestBase extends TestCase
     private function getMediaDirPath(Filesystem\Directory\WriteInterface $directory): string
     {
         if (!$directory->getDriver() instanceof Filesystem\Driver\File) {
-            return 'media';
+            return 'web';
         }
 
         $appParams = \Magento\TestFramework\Helper\Bootstrap::getInstance()

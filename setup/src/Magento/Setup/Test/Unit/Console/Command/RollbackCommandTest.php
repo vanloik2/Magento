@@ -140,7 +140,7 @@ class RollbackCommandTest extends TestCase
         $this->backupRollback->expects($this->once())
             ->method('codeRollback')
             ->willReturn($this->backupRollback);
-        $this->tester->execute(['--media-file' => 'A.tgz']);
+        $this->tester->execute(['--web-file' => 'A.tgz']);
     }
 
     public function testExecuteDBRollback()

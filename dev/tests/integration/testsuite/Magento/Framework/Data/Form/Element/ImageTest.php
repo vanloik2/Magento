@@ -31,6 +31,6 @@ class ImageTest extends \PHPUnit\Framework\TestCase
         $this->imageElement->setValue($filePath);
         $html = $this->imageElement->getElementHtml();
 
-        $this->assertStringContainsString('media/' . $filePath, $html);
+        $this->assertStringContainsString('web/' . $filePath, $html);
     }
 }

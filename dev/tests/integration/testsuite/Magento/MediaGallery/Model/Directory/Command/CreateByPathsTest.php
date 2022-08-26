@@ -38,7 +38,7 @@ class CreateByPathsTest extends \PHPUnit\Framework\TestCase
     private const TEST_DIRECTORY_NAME = 'testDir/testCreateDirectory';
 
     /**
-     * Absolute path to the media directory
+     * Absolute path to the web directory
      */
     /**
      * @var \Magento\Framework\Filesystem\Directory\ReadInterface
@@ -143,7 +143,7 @@ class CreateByPathsTest extends \PHPUnit\Framework\TestCase
                 ['theme/' . self::TEST_DIRECTORY_NAME]
             ],
             [
-                ['../../pub/media', 'theme']
+                ['../../pub/web', 'theme']
             ]
         ];
     }

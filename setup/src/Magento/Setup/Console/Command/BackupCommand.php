@@ -27,7 +27,7 @@ class BackupCommand extends AbstractSetupCommand
      * Name of input options
      */
     const INPUT_KEY_CODE = 'code';
-    const INPUT_KEY_MEDIA = 'media';
+    const INPUT_KEY_MEDIA = 'web';
     const INPUT_KEY_DB = 'db';
 
     /**
@@ -96,7 +96,7 @@ class BackupCommand extends AbstractSetupCommand
                 self::INPUT_KEY_MEDIA,
                 null,
                 InputOption::VALUE_NONE,
-                'Take media backup'
+                'Take web backup'
             ),
             new InputOption(
                 self::INPUT_KEY_DB,
@@ -106,7 +106,7 @@ class BackupCommand extends AbstractSetupCommand
             ),
         ];
         $this->setName('setup:backup')
-            ->setDescription('Takes backup of Magento Application code base, media and database')
+            ->setDescription('Takes backup of Magento Application code base, web and database')
             ->setDefinition($options);
         parent::configure();
     }

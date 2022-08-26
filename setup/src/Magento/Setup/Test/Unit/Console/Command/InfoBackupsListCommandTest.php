@@ -21,7 +21,7 @@ class InfoBackupsListCommandTest extends TestCase
     {
         $table = $this->createMock(Table::class);
         $table->expects($this->once())->method('setHeaders')->with(['Backup Filename', 'Backup Type']);
-        $table->expects($this->once())->method('addRow')->with(['backupFile_media.tgz', 'media']);
+        $table->expects($this->once())->method('addRow')->with(['backupFile_media.tgz', 'web']);
         /** @var \Symfony\Component\Console\Helper\TableFactory|MockObject $helperSet */
         $tableFactoryMock = $this->createMock(\Symfony\Component\Console\Helper\TableFactory::class);
         $tableFactoryMock->expects($this->once())->method('create')->willReturn($table);

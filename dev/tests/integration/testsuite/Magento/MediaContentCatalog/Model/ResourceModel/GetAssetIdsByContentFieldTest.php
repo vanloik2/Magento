@@ -81,7 +81,7 @@ class GetAssetIdsByContentFieldTest extends TestCase
     }
 
     /**
-     * Test for getting asset when media gallery disabled
+     * Test for getting asset when web gallery disabled
      *
      * @magentoConfigFixture system/media_gallery/enabled 0
      * @magentoDataFixture Magento/MediaGallery/_files/media_asset.php

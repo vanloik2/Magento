@@ -412,7 +412,7 @@ categoryList(filters: {ids: {in: ["$categoryId"]}}) {
 }
 QUERY;
         $storeManager = $this->objectManager->get(StoreManagerInterface::class);
-        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('media');
+        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('web');
 
         $expected = "catalog/category/magento_long_image_name_magento_long_image_name_magento_long_image_name.jpg";
         $expectedImageUrl = rtrim($storeBaseUrl, '/') . '/' . $expected;

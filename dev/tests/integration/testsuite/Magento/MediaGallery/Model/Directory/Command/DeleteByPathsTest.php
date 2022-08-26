@@ -105,13 +105,13 @@ class DeleteByPathsTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                ['../../pub/media']
+                ['../../pub/web']
             ],
             [
                 ['theme']
             ],
             [
-                ['../../pub/media', 'theme']
+                ['../../pub/web', 'theme']
             ]
         ];
     }

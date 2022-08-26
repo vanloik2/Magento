@@ -133,7 +133,7 @@ class UploadTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with correct directory path and file name to check that file can be uploaded to the directory
-     * located under WYSIWYG media.
+     * located under WYSIWYG web.
      *
      * @return void
      * @magentoAppIsolation enabled
@@ -217,7 +217,7 @@ class UploadTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with traversal directory path to check that there is no ability to create file not
-     * under media directory.
+     * under web directory.
      *
      * @return void
      */
@@ -235,7 +235,7 @@ class UploadTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with traversal file path to check that there is no ability to create file not
-     * under media directory.
+     * under web directory.
      *
      * @return void
      */

@@ -96,7 +96,7 @@ class NewFolderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path to check that new folder can be created under WYSIWYG media directory.
+     * Execute method with correct directory path to check that new folder can be created under WYSIWYG web directory.
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class NewFolderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path to check that new folder can be created under WYSIWYG media directory.
+     * Execute method with correct directory path to check that new folder can be created under WYSIWYG web directory.
      *
      * @magentoDataFixture Magento/Cms/_files/linked_media.php
      */
@@ -141,7 +141,7 @@ class NewFolderTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with traversal directory path to check that there is no ability to create new folder not
-     * under media directory.
+     * under web directory.
      *
      * @return void
      */

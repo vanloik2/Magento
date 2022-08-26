@@ -123,7 +123,7 @@ class UpgradeCommandTest extends TestCase
     public function executeDataProvider(): array
     {
         $mediaGalleryNotice = "Media files stored outside of 'Media Gallery Allowed' folders will not be available "
-        . "to the media gallery.\n"
+        . "to the web gallery.\n"
         . "Please refer to Developer Guide for more details.\n";
 
         return [

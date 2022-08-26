@@ -39,7 +39,7 @@ define([
                     'mime-type': 'image/png'
                 });
 
-                $el.val('/pub/media/something.png');
+                $el.val('/pub/web/something.png');
 
                 component.addFileFromMediaGallery(null, {
                     target: $el

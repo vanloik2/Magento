@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-// Copy images to tmp media path
+// Copy images to tmp web path
 
 use Magento\Framework\App\Filesystem\DirectoryList;
 

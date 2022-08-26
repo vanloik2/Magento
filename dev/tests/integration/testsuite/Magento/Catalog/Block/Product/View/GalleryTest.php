@@ -455,12 +455,12 @@ class GalleryTest extends \PHPUnit\Framework\TestCase
                 'default',
                 [
                     [
-                        'img' => '/media/catalog/product/m/a/magento_image.jpg',
+                        'img' => '/web/catalog/product/m/a/magento_image.jpg',
                         'caption' => 'Image Alt Text',
                         'position' => 1,
                     ],
                     [
-                        'img' => '/media/catalog/product/m/a/magento_small_image.jpg',
+                        'img' => '/web/catalog/product/m/a/magento_small_image.jpg',
                         'caption' => 'Simple Product',
                         'position' => 2,
                     ],
@@ -480,12 +480,12 @@ class GalleryTest extends \PHPUnit\Framework\TestCase
                 'fixture_second_store',
                 [
                     [
-                        'img' => '/media/catalog/product/m/a/magento_image.jpg',
+                        'img' => '/web/catalog/product/m/a/magento_image.jpg',
                         'caption' => 'Image Alt Text',
                         'position' => 1,
                     ],
                     [
-                        'img' => '/media/catalog/product/m/a/magento_small_image.jpg',
+                        'img' => '/web/catalog/product/m/a/magento_small_image.jpg',
                         'caption' => 'New Image Alt Text',
                         'position' => 2,
                     ],

@@ -64,7 +64,7 @@ class UploaderTest extends \Magento\TestFramework\Indexer\TestCase
         $this->directory = $this->objectManager->get(TargetDirectory::class)->getDirectoryWrite(DirectoryList::ROOT);
 
         if (!$this->directory->getDriver() instanceof File) {
-            $mediaPath = 'media';
+            $mediaPath = 'web';
         } else {
             $appParams = \Magento\TestFramework\Helper\Bootstrap::getInstance()
                 ->getBootstrap()

@@ -10,7 +10,7 @@ class FilterTest extends \PHPUnit\Framework\TestCase
     public function testMediaDirective()
     {
         $image = 'wysiwyg/VB.png';
-        $construction = ['{{media url="' . $image . '"}}', 'media', ' url="' . $image . '"'];
+        $construction = ['{{web url="' . $image . '"}}', 'web', ' url="' . $image . '"'];
         $baseUrl = 'http://localhost/media/';
 
         /** @var \Magento\Widget\Model\Template\Filter $filter */
@@ -24,7 +24,7 @@ class FilterTest extends \PHPUnit\Framework\TestCase
     public function testMediaDirectiveWithEncodedQuotes()
     {
         $image = 'wysiwyg/VB.png';
-        $construction = ['{{media url=&quot;' . $image . '&quot;}}', 'media', ' url=&quot;' . $image . '&quot;'];
+        $construction = ['{{web url=&quot;' . $image . '&quot;}}', 'web', ' url=&quot;' . $image . '&quot;'];
         $baseUrl = 'http://localhost/media/';
 
         /** @var \Magento\Widget\Model\Template\Filter $filter */

@@ -141,7 +141,7 @@ class ProductImportImagesTest extends ProductTestBase
         $writeAdapter = $filesystem->getDirectoryWrite(DirectoryList::MEDIA);
 
         if (!$writeAdapter->isWritable()) {
-            $this->markTestSkipped('Due to unwritable media directory');
+            $this->markTestSkipped('Due to unwritable web directory');
         }
 
         $this->importDataForMediaTest('import_media_existing_images.csv');

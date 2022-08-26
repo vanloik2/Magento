@@ -150,7 +150,7 @@ class ImageUploaderTest extends TestCase
         $storage = $this->objectManager->get(Storage::class);
         $databaseStorage = $this->objectManager->get(Storage\Database::class);
         $directory = $this->objectManager->get(DatabaseFactory::class)->create();
-        // Synchronize media.
+        // Synchronize web.
         $storage->synchronize(
             [
                 'type' => 1,

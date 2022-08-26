@@ -454,7 +454,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
         $mediaDirectory = $this->fileSystem->getDirectoryWrite(DirectoryList::MEDIA);
 
         $mediaDir = $mediaDirectory->getDriver() instanceof File ?
-            $appParams[DirectoryList::MEDIA][DirectoryList::PATH] : 'media';
+            $appParams[DirectoryList::MEDIA][DirectoryList::PATH] : 'web';
 
         $mediaDirectory->create('catalog/product');
         $mediaDirectory->create('import');
