@@ -3,9 +3,6 @@
 namespace Dev\Banner\Model;
 
 use Dev\Banner\Api\Data\BannerInterface;
-use Dev\Banner\Model\ResourceModel\Banner\Collection;
-use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\CouldNotDeleteException;
 

@@ -22,7 +22,6 @@ class Actions extends Column
      */
      const URL_PATH_EDIT = 'banner/index/edit';
      const URL_PATH_DELETE = 'banner/index/delete';
-//     const URL_PATH_DETAILS = 'cms/block/details';
 
     /**
      * @var UrlInterface

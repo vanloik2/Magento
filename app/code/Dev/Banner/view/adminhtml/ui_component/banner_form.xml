@@ -66,25 +66,10 @@
                 <dataScope>name</dataScope>
             </settings>
         </field>
-<!--        <field name="image" sortOrder="20" formElement="input">-->
-<!--            <argument name="data" xsi:type="array">-->
-<!--                <item name="config" xsi:type="array">-->
-<!--                    <item name="source" xsi:type="string">banner_id</item>-->
-<!--                </item>-->
-<!--            </argument>-->
-<!--            <settings>-->
-<!--                <validation>-->
-<!--                    <rule name="required-entry" xsi:type="boolean">true</rule>-->
-<!--                </validation>-->
-<!--                <dataType>text</dataType>-->
-<!--                <label translate="true">image</label>-->
-<!--                <dataScope>image</dataScope>-->
-<!--            </settings>-->
-<!--        </field>-->
         <field name="images"  sortOrder="2" formElement="imageUploader">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">banner</item>
+                    <item name="source" xsi:type="string">banner_id</item>
                 </item>
             </argument>
             <settings>

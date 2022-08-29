@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dev_Catalog::catalog" title="Expert Management" module="Dev_Banner" sortOrder="51" resource="Dev_Banner::catalog"/>
+        <add id="Dev_Catalog::expert" title="Expert Listing"  module="Dev_Banner" parent="Dev_Catalog::catalog" action="expert/index/" resource="Dev_Catalog::expert"/>
+    </menu>
+</config>
+

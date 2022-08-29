@@ -56,8 +56,8 @@ return [
                                 ],
                             ],
                         ],
-                        'templates' => [
-                            'name' => 'templates',
+                        'ui_component' => [
+                            'name' => 'ui_component',
                             'xsi:type' => 'array',
                             'item' => [
                                 'string' => [

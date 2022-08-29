@@ -11,14 +11,14 @@ namespace Magento\Framework\View\Helper;
 use Magento\TestFramework\TestCase\AbstractController;
 
 /**
- * Test the secure HTML helper and templates.
+ * Test the secure HTML helper and ui_component.
  *
  * @magentoAppArea frontend
  */
 class SecureHtmlRendererTemplateTest extends AbstractController
 {
     /**
-     * Test using the helper inside templates.
+     * Test using the helper inside ui_component.
      *
      * @return void
      */
