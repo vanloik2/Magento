@@ -12,7 +12,7 @@ use Magento\Framework\TestFramework\Unit\Utility\XsdValidator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit test of the cache configuration
+ * Position test of the cache configuration
  */
 class ConfigTest extends TestCase
 {

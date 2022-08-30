@@ -44,7 +44,6 @@ class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInte
      */
     public function execute()
     {
-
         /** @var \Magento\Backend\Model\View\Result\Forward $resultForward */
         $resultForward = $this->resultForwardFactory->create();
         return $resultForward->forward('edit');

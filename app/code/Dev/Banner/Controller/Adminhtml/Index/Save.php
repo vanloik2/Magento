@@ -58,7 +58,7 @@ class Save extends Action implements HttpPostActionInterface
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
-
+dd($data);  
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
 
@@ -75,6 +75,18 @@ class Save extends Action implements HttpPostActionInterface
                 }
             }
 
+            // Lấy dl từ dynamic row ra -> biến thành mảng -> biến thành chuổi -> add vào data
+
+            if(isset($data['dynamic_row'])){
+                $sizes = [];
+                foreach ($data['dynamic_row'] as $value){
+
+                    array_push($sizes, $value['name']);
+
+                }
+                $data['size'] = implode(',', $sizes);
+            }
+            //
             $model = $this->_objectManager->create('Dev\Banner\Model\Banner');
 
             $model->setData($data);

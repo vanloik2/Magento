@@ -22,7 +22,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit test for \Magento\Setup\Fixtures\EavVariationsFixture.
+ * Position test for \Magento\Setup\Fixtures\EavVariationsFixture.
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class EavVariationsFixtureTest extends TestCase

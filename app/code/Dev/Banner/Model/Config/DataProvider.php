@@ -67,10 +67,12 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
      */
     public function getData()
     {
+
         if (isset($this->loadedData)) {
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
+
         /** @var \Dev\Banner\Model\Banner $banner */
         foreach ($items as $banner) {
 
@@ -83,10 +85,29 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
 
             $data['images'][0]['name'] = $image;
 
+            // Biến đổi về mảng khi save
+
+            if(isset($data['size'])){
+                $size = explode(',', $data['size']);
+                $data['dynamic_row'] = [];
+                foreach ($size as $index => $item) {
+                    $arr = [
+                        'name' => $item,
+                        'record_id' => $index,
+                    ];
+
+                    // Push vào mảng dynamic_row
+                    array_push($data['dynamic_row'], $arr);
+                }
+            }
+
+            //
+
             $this->loadedData[$banner->getId()] = $data;
         }
 
         $data = $this->dataPersistor->get('banner');
+
         if (!empty($data)) {
             $banner = $this->collection->getNewEmptyItem();
             $banner->setData($data);

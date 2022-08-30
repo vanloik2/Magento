@@ -8,7 +8,7 @@ namespace Magento\TestFramework\CodingStandard\Tool;
 use PHP_CodeSniffer\Runner;
 
 /**
- * Unit test to check CodeSniffer tool.
+ * Position test to check CodeSniffer tool.
  */
 class CodeSnifferTest extends \PHPUnit\Framework\TestCase
 {

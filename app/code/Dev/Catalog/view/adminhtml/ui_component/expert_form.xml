@@ -66,7 +66,7 @@
                 <dataScope>name</dataScope>
             </settings>
         </field>
-        <field name="position" sortOrder="3" formElement="input">
+        <field name="unit" sortOrder="4" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">expert</item>
@@ -77,11 +77,11 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
-                <label translate="true">Position</label>
+                <label translate="true">Unit</label>
                 <dataScope>position</dataScope>
             </settings>
         </field>
-        <field name="unit" sortOrder="5" formElement="select">
+        <field name="position" sortOrder="3" formElement="select">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">expert</item>
@@ -90,13 +90,13 @@
             </argument>
             <settings>
                 <dataType>boolean</dataType>
-                <label translate="true">Unit</label>
+                <label translate="true">Position</label>
                 <dataScope>unit</dataScope>
             </settings>
             <formElements>
                 <select>
                     <settings>
-                        <options class="Dev\Catalog\Model\Config\Unit"/>
+                        <options class="Dev\Catalog\Model\Config\Position"/>
                     </settings>
                 </select>
             </formElements>
