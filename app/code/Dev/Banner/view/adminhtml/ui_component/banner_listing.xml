@@ -147,18 +147,6 @@
                 <sortable>false</sortable>
             </settings>
         </column>
-        <column name="size" >
-            <settings>
-                <filter>text</filter>
-                <label translate="true">Size</label>
-            </settings>
-        </column>
-        <column name="test_modal" >
-            <settings>
-                <filter>text</filter>
-                <label translate="true">Test Modal</label>
-            </settings>
-        </column>
         <column name="short_description">
             <settings>
                 <filter>text</filter>

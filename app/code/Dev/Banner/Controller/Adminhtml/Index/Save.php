@@ -7,7 +7,6 @@ use Magento\Backend\Model\View\Result\Redirect;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Controller\ResultInterface;
-use Dev\Banner\Model\Banner;
 
 /**
  * Save CMS page action.
@@ -58,7 +57,7 @@ class Save extends Action implements HttpPostActionInterface
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();
-dd($data);  
+
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
 
@@ -86,7 +85,12 @@ dd($data);
                 }
                 $data['size'] = implode(',', $sizes);
             }
-            //
+            // Lấy dl cho cột test_insert_listing dưới dạng json
+
+            if(isset($data['insert_listing_example'])){
+                $data['test_insert_listing'] = json_encode($data['insert_listing_example']);
+            }
+
             $model = $this->_objectManager->create('Dev\Banner\Model\Banner');
 
             $model->setData($data);

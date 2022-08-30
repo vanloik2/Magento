@@ -31,23 +31,23 @@ class BottomBanner extends Template
 
         $collection = $this->_collectionFactory->create()->addFieldToSelect('banner_id')->addFieldToFilter('change_banner', 4)->load();
 
-        $array = [];
+        $url = $this->storeManager->getStore()->getBaseUrl(
+                UrlInterface::URL_TYPE_MEDIA
+            ) . 'dev/tmp/banner/';
 
+        $array = [];
         foreach ($collection as $value){
             $model = $this->bannerRepository->getById($value['banner_id'])->getData();
 
             if(empty($model)) {
                 $array[] = null;
             }else{
+                $model['image'] = $url.$model['image'];
                 array_push($array, $model);
             }
         }
 
-        $url = $this->storeManager->getStore()->getBaseUrl(
-                UrlInterface::URL_TYPE_MEDIA
-            ) . 'dev/tmp/banner/';
-
-        return [$array , $url];
+        return $array;
 
     }
 }
