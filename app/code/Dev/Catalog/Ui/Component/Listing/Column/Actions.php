@@ -13,8 +13,8 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class Actions extends Column
 {
 
-     const URL_PATH_EDIT = 'expert/index/edit';
-     const URL_PATH_DELETE = 'expert/index/delete';
+     const URL_PATH_EDIT = 'expert/index.phtml/edit';
+     const URL_PATH_DELETE = 'expert/index.phtml/delete';
 
     /**
      * @var UrlInterface

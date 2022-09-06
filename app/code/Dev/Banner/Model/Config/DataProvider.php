@@ -7,42 +7,22 @@ namespace Dev\Banner\Model\Config;
 
 use Dev\Banner\Model\ResourceModel\Banner\CollectionFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
+use Magento\Framework\UrlInterface;
 use Magento\Ui\DataProvider\Modifier\PoolInterface;
 use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\Json\Helper\Data;
 
 /**
  * Class DataProvider
  */
 class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
 {
-    /**
-     * @var \Dev\Banner\Model\ResourceModel\Banner\Collection
-     */
     protected $collection;
-    protected  $storeManager;
-
-    /**
-     * @var DataPersistorInterface
-     */
+    protected $storeManager;
     protected $dataPersistor;
-
-    /**
-     * @var array
-     */
     protected $loadedData;
+    protected $jsonHelper;
 
-    /**
-     * Constructor
-     *
-     * @param string $name
-     * @param string $primaryFieldName
-     * @param string $requestFieldName
-     * @param CollectionFactory $blockCollectionFactory
-     * @param DataPersistorInterface $dataPersistor
-     * @param array $meta
-     * @param array $data
-     * @param PoolInterface|null $pool
-     */
     public function __construct(
         $name,
         $primaryFieldName,
@@ -50,21 +30,18 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         StoreManagerInterface $storeManager,
         CollectionFactory $blockCollectionFactory,
         DataPersistorInterface $dataPersistor,
+        Data $jsonHelper,
         array $meta = [],
         array $data = [],
         PoolInterface $pool = null
     ) {
+        $this->jsonHelper = $jsonHelper;
         $this->collection = $blockCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
         $this->storeManager = $storeManager;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data, $pool);
     }
 
-    /**
-     * Get data
-     *
-     * @return array
-     */
     public function getData()
     {
 
@@ -73,35 +50,31 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         }
         $items = $this->collection->getItems();
 
-        /** @var \Dev\Banner\Model\Banner $banner */
         foreach ($items as $banner) {
 
             $data = $banner->getData();
-            $image = $data['image'];
 
-            $data['images'][0]['url'] = $this->storeManager->getStore()->getBaseUrl(
-                \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-            ) . 'dev/tmp/banner/' . $image;
+            // convert image về định dạng edit
 
-            $data['images'][0]['name'] = $image;
+            $data['images'] = [
+                0 => [
+                    'url' => $this->storeManager->getStore()->getBaseUrl(UrlInterFace::URL_TYPE_MEDIA) . 'dev/tmp/banner/' . $data['image'],
+                    'name' => $data['image']
+                ]
+            ];
 
-            // Biến đổi về mảng khi save
+            // Biến đổi về mảng khi save // size -> dynamic_row
 
             if(isset($data['size'])){
-                $size = explode(',', $data['size']);
-                $data['dynamic_row'] = [];
-                foreach ($size as $index => $item) {
-                    $arr = [
-                        'name' => $item,
-                        'record_id' => $index,
-                    ];
-
-                    // Push vào mảng dynamic_row
-                    array_push($data['dynamic_row'], $arr);
-                }
+                $data['dynamic_row'] = $this->jsonHelper->jsonDecode($data['size']);
             }
 
-            //
+            //test_listing_insert
+
+//            $insert_listing = $data['test_insert_listing'];
+//            if(isset($insert_listing)){
+//                $data['insert_listing_example'] = $this->jsonHelper->jsonDecode($insert_listing);
+//            }
 
             $this->loadedData[$banner->getId()] = $data;
         }

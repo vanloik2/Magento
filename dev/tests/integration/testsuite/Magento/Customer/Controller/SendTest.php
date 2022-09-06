@@ -54,8 +54,8 @@ class SendTest extends AbstractController
                 ]
             );
 
-        $this->dispatch('wishlist/index/send');
-        $this->assertRedirect($this->stringContains('wishlist/index/index'));
+        $this->dispatch('wishlist/index.phtml/send');
+        $this->assertRedirect($this->stringContains('wishlist/index.phtml/index.phtml'));
         $this->assertSessionMessages(
             $this->equalTo(['Your wish list has been shared.']),
             \Magento\Framework\Message\MessageInterface::TYPE_SUCCESS
@@ -83,8 +83,8 @@ class SendTest extends AbstractController
                 ]
             );
 
-        $this->dispatch('wishlist/index/send');
-        $this->assertRedirect($this->stringContains('wishlist/index/share'));
+        $this->dispatch('wishlist/index.phtml/send');
+        $this->assertRedirect($this->stringContains('wishlist/index.phtml/share'));
         $this->assertSessionMessages(
             $this->equalTo(['Incorrect CAPTCHA']),
             \Magento\Framework\Message\MessageInterface::TYPE_ERROR

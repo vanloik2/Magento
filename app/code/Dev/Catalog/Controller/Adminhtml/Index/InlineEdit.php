@@ -13,13 +13,8 @@ use Magento\Framework\Controller\Result\JsonFactory;
 
 class InlineEdit extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
-    /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
-    const ADMIN_RESOURCE = 'Dev_Catalog::save';
 
+    const ADMIN_RESOURCE = 'Dev_Catalog::save';
 
     protected $jsonFactory;
     protected $expertFactory;
@@ -50,7 +45,7 @@ class InlineEdit extends \Magento\Backend\App\Action implements HttpPostActionIn
                $banner->save();
            }
            catch(\Exception $e){
-               $messages[] = __('Error while saving banner');
+               $messages[] = __('Error while saving expert');
                $error = true;
            }
 

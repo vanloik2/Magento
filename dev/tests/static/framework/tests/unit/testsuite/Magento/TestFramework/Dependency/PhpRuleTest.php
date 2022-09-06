@@ -254,17 +254,17 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
         return [
             'getUrl from same module' => [
                 'Magento\Cms\SomeClass',
-                '$this->getUrl("cms/index/index")',
+                '$this->getUrl("cms/index.phtml/index.phtml")',
                 []
             ],
             'getUrl from another module' => [
                 'Magento\SomeModule\SomeClass',
-                '$this->getUrl("cms/index/index")',
+                '$this->getUrl("cms/index.phtml/index.phtml")',
                 [
                     [
                         'modules' => ['Magento\Cms'],
                         'type' => RuleInterface::TYPE_HARD,
-                        'source' => 'getUrl("cms/index/index"',
+                        'source' => 'getUrl("cms/index.phtml/index.phtml"',
                     ]
                 ]
             ],
@@ -382,11 +382,11 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
         return [
             'wildcard controller route' => [
                 'Magento\SomeModule\Controller\ControllerName\SomeClass',
-                '$this->getUrl("cms/*/index")',
+                '$this->getUrl("cms/*/index.phtml")',
                 [
                     'route_id' => 'cms',
                     'controller_name' => 'controllername',
-                    'action_name' => 'index'
+                    'action_name' => 'index.phtml'
                 ]
             ],
             'adminhtml wildcard controller route' => [
@@ -398,7 +398,7 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
                         'action_name' => 'deletestorepost'
                     ]
             ],
-            'index wildcard' => [
+            'index.phtml wildcard' => [
                 'Magento\Backend\Controller\System\Store\DeleteStore',
                 '$this->getUrl("routeid/controllername/*")',
                 [
@@ -438,7 +438,7 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
             'getUrl from same module' => [
                 'Magento\SomeModule\SomeClass',
                 '$this->getUrl("someModule")',
-                new LocalizedException(__('Invalid URL path: %1', 'somemodule/index/index')),
+                new LocalizedException(__('Invalid URL path: %1', 'somemodule/index.phtml/index.phtml')),
             ],
             'getUrl from unknown wildcard path' => [
                 'Magento\Catalog\Controller\Product\View',

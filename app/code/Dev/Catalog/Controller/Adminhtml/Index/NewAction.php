@@ -9,11 +9,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
  */
 class NewAction extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
-    /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
+
     const ADMIN_RESOURCE = 'Dev_Catalog::save';
 
     protected $resultForwardFactory;

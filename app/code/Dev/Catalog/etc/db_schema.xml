@@ -11,8 +11,26 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
-<!--        <index referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID" indexType="btree">-->
+<!--        <index.phtml referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID" indexType="btree">-->
 <!--            <column name="store_id"/>-->
-<!--        </index>-->
+<!--        </index.phtml>-->
+    </table>
+
+    <table name="expert_review" resource="default" engine="innodb" comment="Review Product Table">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment= "ID"/>
+        <column xsi:type="int" name="expert_id" unsigned="false" nullable="false"  comment= "Expert Id"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" comment= "Product Id"/>
+        <column xsi:type="varchar" name="review_title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="review_detail" nullable="false" length="500" comment="Detail"/>
+        <column xsi:type="datetime" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="true" comment="Created"/>
+        <column xsi:type="datetime" name="updated_at" on_update="false" nullable="true" comment="Updated"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FR_EXPERT" table="expert_review"
+           column="expert_id" referenceTable="expert" referenceColumn="id"
+           onDelete="CASCADE"/>
     </table>
 </schema>
+
+

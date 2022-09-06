@@ -28,7 +28,7 @@ class TopBanner extends Template
     }
 
     public function getImageChangeBanner(){
-        // Lọc banner theo đk
+        // Lọc banner theo đk và lấy ra id
         $collection = $this->_collectionFactory->create()->addFieldToSelect('banner_id')->addFieldToFilter('change_banner', 3)->load();
         // Lấy đường dẫn ảnh
         $url = $this->storeManager->getStore()->getBaseUrl(

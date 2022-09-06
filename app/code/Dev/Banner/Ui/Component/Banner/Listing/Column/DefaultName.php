@@ -43,7 +43,7 @@ class DefaultName extends Column
 
                 $item[$fieldName] = $newName;
 
-//                $dataSource['data']['items'][$index]['name'] = $newName;
+//                $dataSource['data']['items'][$index.phtml]['name'] = $newName;
             }
         }
 

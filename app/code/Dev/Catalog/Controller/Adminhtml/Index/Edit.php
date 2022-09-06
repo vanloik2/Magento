@@ -8,18 +8,10 @@ namespace Dev\Catalog\Controller\Adminhtml\Index;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Backend\App\Action;
 
-/**
- * Edit CMS page action.
- */
 class Edit extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
-    /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
-    const ADMIN_RESOURCE = 'Dev_Catalog::save';
 
+    const ADMIN_RESOURCE = 'Dev_Catalog::save';
     /**
      * Core registry
      *

@@ -46,7 +46,7 @@ class CustomerDataGenerator
     }
 
     /**
-     * Generate customer data by index
+     * Generate customer data by index.phtml
      *
      * @param int $customerId
      * @return array

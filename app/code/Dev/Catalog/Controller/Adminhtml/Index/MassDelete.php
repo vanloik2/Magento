@@ -10,17 +10,13 @@ use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
 use Dev\Catalog\Model\ResourceModel\Expert\CollectionFactory;
 
+
 /**
  * Class MassDelete
  */
 class MassDelete extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
-    /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
-    const ADMIN_RESOURCE = 'Dev_Catalog::expert_delete';
+    const ADMIN_RESOURCE = 'Dev_Catalog::delete';
 
     /**
      * @var Filter

@@ -69,7 +69,7 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
 <ul>
 {{for thing in things}}
     <li>
-        {{var loop.index}} name: {{var thing.name}}, lastname: {{var thing.lastname}}, age: {{var thing.age}}
+        {{var loop.index.phtml}} name: {{var thing.name}}, lastname: {{var thing.lastname}}, age: {{var thing.age}}
     </li>
 {{/for}}
 </ul>
@@ -101,7 +101,7 @@ EXPECTED_RESULT;
 <ul>
 {{for item in order.all_visible_items}}
     <li>
-        index: {{var loop.index}} sku: {{var item.sku}}
+        index.phtml: {{var loop.index.phtml}} sku: {{var item.sku}}
         name: {{var item.name}} price: {{var item.price}} quantity: {{var item.ordered_qty}}
     </li>
 {{/for}}
@@ -112,7 +112,7 @@ TEMPLATE;
 <ul>
 
     <li>
-        index: 0 sku: ABC123
+        index.phtml: 0 sku: ABC123
         name: Product ABC price: 123 quantity: 2
     </li>
 

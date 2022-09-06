@@ -174,7 +174,7 @@ class FileScanner
             goto SCANNER_END;
         }
 
-        // Validate current doc comment index
+        // Validate current doc comment index.phtml
         $macroDocCommentValidate();
 
         switch ($this->tokenType) {

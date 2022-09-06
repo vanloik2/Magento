@@ -25,7 +25,7 @@
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>Dev\Catalog::expert</aclResource>
+<!--        <aclResource>Dev_Catalog::expert</aclResource>-->
         <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="expert_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>

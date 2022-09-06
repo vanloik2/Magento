@@ -8,6 +8,8 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Controller\ResultInterface;
 
+    const ADMIN_RESOURCE = 'Dev_Catalog::save';
+
 /**
  * Save CMS page action.
  *
@@ -15,12 +17,6 @@ use Magento\Framework\Controller\ResultInterface;
  */
 class Save extends Action implements HttpPostActionInterface
 {
-    /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
-    const ADMIN_RESOURCE = 'Dev_Banner::save';
 
     /**
      * @var PostDataProcessor
@@ -64,6 +60,8 @@ class Save extends Action implements HttpPostActionInterface
 
             if (empty($data['id'])) {
                 $data['id'] = null;
+            }else{
+                $data['updated_at'] = date('Y-m-d H:i:s');
             }
 
             $model = $this->_objectManager->create('Dev\Catalog\Model\Expert');
@@ -73,10 +71,10 @@ class Save extends Action implements HttpPostActionInterface
             try {
 
                 $model->save();
-                $this->messageManager->addSuccessMessage(__('You saved the page.'));
+                $this->messageManager->addSuccessMessage(__('You saved the expert.'));
 
             } catch (\Exception $e) {
-                $this->messageManager->addErrorMessage(__('Something went wrong while saving the page.'));
+                $this->messageManager->addErrorMessage(__('Something went wrong while saving the expert.'));
             }
 
         }

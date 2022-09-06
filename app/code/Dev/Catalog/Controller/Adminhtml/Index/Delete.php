@@ -4,9 +4,7 @@ namespace Dev\Catalog\Controller\Adminhtml\Index;
 
 class Delete extends \Magento\Backend\App\Action
 {
-    /**
-     * Authorization level of a basic admin session
-     */
+
     const ADMIN_RESOURCE = 'Dev_Catalog::delete';
 
     public function execute()
@@ -16,7 +14,7 @@ class Delete extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($id) {
             try {
-                // Init model and delete    
+                // Init model and delete
                 $model = $this->_objectManager->create('Dev\Catalog\Model\Expert');
                 $model->load($id);
                 $id = $model->getId();

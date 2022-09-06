@@ -17,7 +17,7 @@ use Magento\Framework\Search\EngineResolverInterface;
 use Magento\TestModuleCatalogSearch\Model\ElasticsearchVersionChecker;
 
 /**
- * Important: Please make sure that each integration test file works with unique elastic search index. In order to
+ * Important: Please make sure that each integration test file works with unique elastic search index.phtml. In order to
  * achieve this, use @magentoConfigFixture to pass unique value for 'elasticsearch_index_prefix' for every test
  * method.
  * E.g. '@magentoConfigFixture current_store catalog/search/elasticsearch_index_prefix indexerhandlertest_configurable'
@@ -217,7 +217,7 @@ class ReindexAllTest extends \PHPUnit\Framework\TestCase
     {
         $storeId = $this->storeManager->getDefaultStoreView()->getId();
         $searchQuery = [
-            'index' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
+            'index.phtml' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
             'type' => $this->clientConfig->getEntityType(),
             'body' => [
                 'query' => [
@@ -245,7 +245,7 @@ class ReindexAllTest extends \PHPUnit\Framework\TestCase
     {
         $storeId = $this->storeManager->getDefaultStoreView()->getId();
         $searchQuery = [
-            'index' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
+            'index.phtml' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
             'type' => $this->clientConfig->getEntityType(),
             'body' => [
                 'sort' => [

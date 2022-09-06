@@ -63,7 +63,7 @@ class PriceTest extends TestCase
     }
 
     /**
-     * Test get bundle index price if enabled show out off stock
+     * Test get bundle index.phtml price if enabled show out off stock
      *
      * @magentoDbIsolation disabled
      * @magentoAppIsolation enabled
@@ -92,7 +92,7 @@ class PriceTest extends TestCase
     }
 
     /**
-     * Asserts price data in index table.
+     * Asserts price data in index.phtml table.
      *
      * @param int $productId
      * @param array $expectedPrices

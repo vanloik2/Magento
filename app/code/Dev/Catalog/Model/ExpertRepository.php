@@ -34,7 +34,7 @@ class ExpertRepository implements ExpertRepositoryInterface
     {
         $expertModel = $this->expertFactory->create();
         $this->expertResource->load($expertModel, $id);
-        if (!$expertModel->getBannerId()) {
+        if (!$expertModel->getEntityId()) {
             throw new NoSuchEntityException(__('Unable to find expert data with ID "%1"', $id));
         }
         return $expertModel;

@@ -7,7 +7,7 @@
 define([
     'underscore',
     'tests/assets/tools',
-    'tests/assets/apply/index',
+    'tests/assets/apply/index.phtml',
     'mage/apply/main'
 ], function (_, tools, config, mage) {
     'use strict';

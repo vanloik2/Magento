@@ -25,7 +25,7 @@ class SearchConfigOptionsList
     const INPUT_KEY_ELASTICSEARCH_ENABLE_AUTH = 'elasticsearch-enable-auth';
     const INPUT_KEY_ELASTICSEARCH_USERNAME = 'elasticsearch-username';
     const INPUT_KEY_ELASTICSEARCH_PASSWORD = 'elasticsearch-password';
-    const INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX = 'elasticsearch-index-prefix';
+    const INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX = 'elasticsearch-index.phtml-prefix';
     const INPUT_KEY_ELASTICSEARCH_TIMEOUT = 'elasticsearch-timeout';
 
     /**
@@ -77,7 +77,7 @@ class SearchConfigOptionsList
                 self::INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX,
                 TextConfigOption::FRONTEND_WIZARD_TEXT,
                 '',
-                'Elasticsearch index prefix.'
+                'Elasticsearch index.phtml prefix.'
             ),
             new TextConfigOption(
                 self::INPUT_KEY_ELASTICSEARCH_TIMEOUT,

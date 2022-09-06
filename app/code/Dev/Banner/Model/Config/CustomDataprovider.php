@@ -2,18 +2,10 @@
 
 namespace Dev\Banner\Model\Config;
 
-use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
-
-/**
- * Class CustomDataProvider
- */
 class CustomDataprovider extends DataProvider
 {
-    /**
-     * Get data
-     *
-     * @return array
-     */
+
+
     public function getData()
     {
         return [

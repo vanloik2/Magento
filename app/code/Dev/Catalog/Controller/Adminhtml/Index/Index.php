@@ -7,6 +7,8 @@ use Magento\Backend\App\Action;
 
 class Index extends Action
 {
+    const ADMIN_RESOURCE = 'Dev_Catalog::expert';
+
     protected $_pageFactory;
 
     public function __construct(Action\Context $context, PageFactory $pageFactory)

@@ -13,7 +13,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Checks that the invalidate price index model is working correctly
+ * Checks that the invalidate price index.phtml model is working correctly
  *
  * @see \Magento\Catalog\Model\Indexer\Product\Price\InvalidateIndex
  */

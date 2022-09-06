@@ -171,7 +171,7 @@ class DataObjectMethodReflection implements MethodReflection
                 break;
             case 'get':
                 $params[] = new DummyParameter(
-                    'index',
+                    'index.phtml',
                     new UnionType([new StringType(), new IntegerType()]),
                     true,
                     null,

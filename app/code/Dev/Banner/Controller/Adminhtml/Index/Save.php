@@ -74,17 +74,12 @@ class Save extends Action implements HttpPostActionInterface
                 }
             }
 
-            // Lấy dl từ dynamic row ra -> biến thành mảng -> biến thành chuổi -> add vào data
+            // Lấy dl từ dynamic row ra -> json
 
             if(isset($data['dynamic_row'])){
-                $sizes = [];
-                foreach ($data['dynamic_row'] as $value){
-
-                    array_push($sizes, $value['name']);
-
-                }
-                $data['size'] = implode(',', $sizes);
+               $data['size'] = json_encode($data['dynamic_row']);
             }
+
             // Lấy dl cho cột test_insert_listing dưới dạng json
 
             if(isset($data['insert_listing_example'])){

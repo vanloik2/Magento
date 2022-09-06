@@ -80,8 +80,8 @@ return [
                                                         ],
                                                     ],
                                                 ],
-                                                'index' => [
-                                                    'name' => 'index',
+                                                'index.phtml' => [
+                                                    'name' => 'index.phtml',
                                                     'xsi:type' => 'string',
                                                     'value' => '0'
                                                 ],

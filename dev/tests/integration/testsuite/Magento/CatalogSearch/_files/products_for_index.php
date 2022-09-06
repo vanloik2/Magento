@@ -16,38 +16,38 @@ use Magento\TestFramework\Helper\Bootstrap;
 $productRepository = Bootstrap::getObjectManager()->get(ProductRepositoryInterface::class);
 $products = [
     [
-        'name' => 'index enabled',
+        'name' => 'index.phtml enabled',
         'sku' => 'index_enabled',
         'status' => Status::STATUS_ENABLED,
         'visibility' => Visibility::VISIBILITY_BOTH,
     ],
     [
-        'name' => 'index disabled',
+        'name' => 'index.phtml disabled',
         'sku' => 'index_disabled',
         'status' => Status::STATUS_DISABLED,
         'visibility' => Visibility::VISIBILITY_BOTH,
     ],
     [
-        'name' => 'index visible search',
+        'name' => 'index.phtml visible search',
         'sku' => 'index_visible_search',
         'status' => Status::STATUS_ENABLED,
         'visibility' => Visibility::VISIBILITY_IN_SEARCH,
     ],
     [
-        'name' => 'index visible category',
+        'name' => 'index.phtml visible category',
         'sku' => 'index_visible_category',
         'status' => Status::STATUS_ENABLED,
         'visibility' => Visibility::VISIBILITY_IN_CATALOG,
     ],
     [
-        'name' => 'index visible both',
+        'name' => 'index.phtml visible both',
         'sku' => 'index_visible_both',
         'status' => Status::STATUS_ENABLED,
         'visibility' => Visibility::VISIBILITY_BOTH,
     ],
     [
 
-        'name' => 'index not visible',
+        'name' => 'index.phtml not visible',
         'sku' => 'index_not_visible',
         'status' => Status::STATUS_ENABLED,
         'visibility' => Visibility::VISIBILITY_NOT_VISIBLE,

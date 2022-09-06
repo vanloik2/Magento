@@ -20,8 +20,8 @@ class Actions extends Column
     /**
      * Url path
      */
-     const URL_PATH_EDIT = 'banner/index/edit';
-     const URL_PATH_DELETE = 'banner/index/delete';
+     const URL_PATH_EDIT = 'banner/index.phtml/edit';
+     const URL_PATH_DELETE = 'banner/index.phtml/delete';
 
     /**
      * @var UrlInterface
@@ -85,7 +85,7 @@ class Actions extends Column
                             'post' => true
                         ],
                         'view' => [
-                            'href' => '/banner/index/index',
+                            'href' => '/banner/index.phtml/index.phtml',
                             'label' => __('View')
                         ],
                     ];

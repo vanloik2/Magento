@@ -12,7 +12,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendController
 {
     /**
-     * Test index action
+     * Test index.phtml action
      */
     public function testIndexAction()
     {
@@ -30,7 +30,7 @@ class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
             ScopeInterface::SCOPE_STORE,
             0
         );
-        $this->dispatch('backend/admin/system_currency/index');
+        $this->dispatch('backend/admin/system_currency/index.phtml');
         $this->getResponse()->isSuccess();
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString('id="rate-form"', $body);

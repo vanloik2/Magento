@@ -16,8 +16,8 @@ class SelectBanner extends Column
     /**
      * Url path
      */
-//     const URL_PATH_EDIT = 'banner/index/edit';
-//     const URL_PATH_DELETE = 'banner/index/delete';
+//     const URL_PATH_EDIT = 'banner/index.phtml/edit';
+//     const URL_PATH_DELETE = 'banner/index.phtml/delete';
 //     const URL_PATH_DETAILS = 'cms/block/details';
 
     /**
@@ -82,7 +82,7 @@ class SelectBanner extends Column
 //                            'post' => true
 //                        ],
                         'header' => [
-                            'href' => '/banner/index/header/id/' . $item['banner_id'],
+                            'href' => '/banner/index.phtml/header/id/' . $item['banner_id'],
                             'label' => __('TopBanner')
                         ],
                         'footer' => [
