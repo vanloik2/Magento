@@ -1,0 +1,23 @@
+{
+    "banner": {
+        "column": {
+            "banner_id": true,
+            "name": true,
+            "size": true,
+            "test_modal": true,
+            "field_test_modal": true,
+            "test_insert_listing": true,
+            "image": true,
+            "status": true,
+            "change_banner": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "BANNER_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

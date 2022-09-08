@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">expert_form.expert_listing_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Page Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Dev\Catalog\Block\Adminhtml\Expert\Edit\SaveButton"/>
+            <button name="delete" class="Dev\Catalog\Block\Adminhtml\Expert\Edit\DeleteButton"/>
+            <button name="back" class="Dev\Catalog\Block\Adminhtml\Expert\Edit\BackButton"/>
+        </buttons>
+        <namespace>expert_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>expert_form.expert_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="expert_listing_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="expert/index/save"/>
+        </settings>
+        <dataProvider class="Dev\Catalog\Model\Config\DataProvider" name="expert_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">expert</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+        <field name="name"  sortOrder="1" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">expert</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="unit" sortOrder="4" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">expert</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Unit</label>
+                <dataScope>unit</dataScope>
+            </settings>
+        </field>
+        <field name="position" sortOrder="3" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">expert</item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Position</label>
+                <dataScope>position</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Dev\Catalog\Model\Config\Position"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
