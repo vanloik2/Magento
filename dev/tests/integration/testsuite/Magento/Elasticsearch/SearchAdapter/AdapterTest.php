@@ -18,7 +18,7 @@ use Magento\TestModuleCatalogSearch\Model\ElasticsearchVersionChecker;
  * @magentoDbIsolation disabled
  * @magentoDataFixture Magento/Framework/Search/_files/products.php
  *
- * Important: Please make sure that each integration test file works with unique elastic search index.phtml. In order to
+ * Important: Please make sure that each integration test file works with unique elastic search index. In order to
  * achieve this, use @ magentoConfigFixture to pass unique value for 'elasticsearch_index_prefix' for every test
  * method. E.g. '@ magentoConfigFixture current_store catalog/search/elasticsearch_index_prefix adaptertest'
  *
@@ -432,7 +432,7 @@ class AdapterTest extends \PHPUnit\Framework\TestCase
      * Elastic Search specific data provider for advanced search test.
      *
      * The expected array is for Elastic Search is different that the one for MySQL
-     * because sometimes more matches are returned. For instance, 3rd index.phtml below
+     * because sometimes more matches are returned. For instance, 3rd index below
      * will return 3 matches instead of 1 (which is what MySQL returns).
      *
      * @return array

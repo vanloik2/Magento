@@ -15,7 +15,7 @@ use Magento\TestFramework\TestCase\AbstractBackendController;
 class GridTest extends AbstractBackendController
 {
     /**
-     * Test index.phtml action
+     * Test index action
      *
      * @magentoDbIsolation enabled
      * @magentoDataFixture Magento/User/_files/locked_users.php

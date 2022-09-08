@@ -15,7 +15,7 @@ $block->setTitle(
 )->setIdentifier(
     'fixture_block_with_asset'
 )->setContent(
-    'content {{web url="testDirectory/path.jpg"}} content'
+    'content {{media url="testDirectory/path.jpg"}} content'
 )->setIsActive(
     1
 )->setStores(

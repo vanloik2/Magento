@@ -50,7 +50,7 @@ class UpdateContentAssetLinksTest extends TestCase
         $entityId = 2020;
         $field = 'description';
         $contentWithoutAsset = '';
-        $contentWithAsset = 'content {{web url="testDirectory/path.jpg"}} content';
+        $contentWithAsset = 'content {{media url="testDirectory/path.jpg"}} content';
 
         $contentIdentity = Bootstrap::getObjectManager()->create(
             ContentIdentityInterface::class,

@@ -75,7 +75,7 @@ class CartTest extends AbstractController
         $this->assertNotNull($item);
         $this->performAddToCartRequest(['item' => $item->getId(), 'qty' => 3]);
         $message = sprintf("\n" . 'You added %s to your ' .
-            '<a href="http://localhost/index.phtml.php/checkout/cart/">shopping cart</a>.', $item->getName());
+            '<a href="http://localhost/index.php/checkout/cart/">shopping cart</a>.', $item->getName());
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
         $this->assertCount(0, $this->getWishlistByCustomerId->execute(1)->getItemCollection());
         $cart = $this->cartFactory->create();
@@ -94,7 +94,7 @@ class CartTest extends AbstractController
         $item = $this->getWishlistByCustomerId->getItemBySku(1, 'Configurable product');
         $this->assertNotNull($item);
         $this->performAddToCartRequest(['item' => $item->getId(), 'qty' => 1]);
-        $redirectUrl = sprintf("wishlist/index.phtml/configure/id/%s/product_id/%s", $item->getId(), $item->getProductId());
+        $redirectUrl = sprintf("wishlist/index/configure/id/%s/product_id/%s", $item->getId(), $item->getProductId());
         $this->assertRedirect($this->stringContains($redirectUrl));
         $message = 'You need to choose options for your item.';
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_NOTICE);
@@ -109,7 +109,7 @@ class CartTest extends AbstractController
     {
         $this->customerSession->setCustomerId(1);
         $this->performAddToCartRequest(['item' => 989]);
-        $this->assertRedirect($this->stringContains('wishlist/index.phtml/'));
+        $this->assertRedirect($this->stringContains('wishlist/index/'));
     }
 
     /**
@@ -153,6 +153,6 @@ class CartTest extends AbstractController
     private function performAddToCartRequest(array $params): void
     {
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index.phtml/cart');
+        $this->dispatch('wishlist/index/cart');
     }
 }

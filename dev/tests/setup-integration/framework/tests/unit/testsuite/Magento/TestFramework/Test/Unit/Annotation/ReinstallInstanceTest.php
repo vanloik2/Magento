@@ -10,7 +10,7 @@ use Magento\Framework\TestFramework\Unit\Helper\ObjectManager as ObjectManagerHe
 /**
  * Test for ReinstallInstance.
  *
- * @package Magento\TestFramework\Test\Position\Annotation
+ * @package Magento\TestFramework\Test\Unit\Annotation
  */
 class ReinstallInstanceTest extends \PHPUnit\Framework\TestCase
 {

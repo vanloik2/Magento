@@ -116,7 +116,7 @@ class MassDeleteTest extends AbstractBackendController
         ];
 
         $this->getRequest()->setParams($requestData)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('backend/customer/index.phtml/massDelete');
+        $this->dispatch('backend/customer/index/massDelete');
         $this->assertSessionMessages(
             $constraint,
             $messageType

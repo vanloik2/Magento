@@ -230,28 +230,28 @@ class InlineUtilTest extends TestCase
                 ['src' => 'http://magento.com/static/track.vtt', 'kind' => 'subtitles'],
                 null,
                 '<track src="http&#x3A;&#x2F;&#x2F;magento.com&#x2F;static&#x2F;track.vtt" kind="subtitles"/>',
-                [new FetchPolicy('web-src', false, ['http://magento.com'])]
+                [new FetchPolicy('media-src', false, ['http://magento.com'])]
             ],
             'remote-source' => [
                 'source',
                 ['src' => 'http://magento.com/static/track.ogg', 'type' => 'audio/ogg'],
                 null,
                 '<source src="http&#x3A;&#x2F;&#x2F;magento.com&#x2F;static&#x2F;track.ogg" type="audio&#x2F;ogg"/>',
-                [new FetchPolicy('web-src', false, ['http://magento.com'])]
+                [new FetchPolicy('media-src', false, ['http://magento.com'])]
             ],
             'remote-video' => [
                 'video',
                 ['src' => 'https://magento.com/static/video.mp4'],
                 null,
                 '<video src="https&#x3A;&#x2F;&#x2F;magento.com&#x2F;static&#x2F;video.mp4"></video>',
-                [new FetchPolicy('web-src', false, ['https://magento.com'])]
+                [new FetchPolicy('media-src', false, ['https://magento.com'])]
             ],
             'remote-audio' => [
                 'audio',
                 ['src' => 'https://magento.com/static/audio.mp3'],
                 null,
                 '<audio src="https&#x3A;&#x2F;&#x2F;magento.com&#x2F;static&#x2F;audio.mp3"></audio>',
-                [new FetchPolicy('web-src', false, ['https://magento.com'])]
+                [new FetchPolicy('media-src', false, ['https://magento.com'])]
             ],
             'remote-object' => [
                 'object',

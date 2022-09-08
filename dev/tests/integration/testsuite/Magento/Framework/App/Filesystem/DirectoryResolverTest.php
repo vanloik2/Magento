@@ -85,8 +85,8 @@ class DirectoryResolverTest extends \PHPUnit\Framework\TestCase
             ->getDirectoryWrite(\Magento\Framework\App\Filesystem\DirectoryList::PUB);
         $driver = $directory->getDriver();
 
-        $mediaPath = $directory->getAbsolutePath('web');
-        $mediaMovedPath = $directory->getAbsolutePath('moved-web');
+        $mediaPath = $directory->getAbsolutePath('media');
+        $mediaMovedPath = $directory->getAbsolutePath('moved-media');
 
         try {
             $driver->rename($mediaPath, $mediaMovedPath);

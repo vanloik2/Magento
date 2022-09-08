@@ -524,7 +524,7 @@ class ModuleUninstallCommandTest extends TestCase
 
     public function testExecuteMediaBackup()
     {
-        $input = ['module' => ['Magento_A', 'Magento_B'], '--backup-web' => true];
+        $input = ['module' => ['Magento_A', 'Magento_B'], '--backup-media' => true];
         $this->setUpExecute();
         $this->moduleUninstaller->expects($this->once())
             ->method('uninstallCode')

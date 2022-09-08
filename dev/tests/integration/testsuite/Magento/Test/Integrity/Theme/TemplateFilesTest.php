@@ -33,7 +33,7 @@ class TemplateFilesTest extends \Magento\TestFramework\TestCase\AbstractIntegrit
 
         $this->assertEmpty(
             $invalidTemplates,
-            "Invalid ui_component found:\n\n" . implode("\n-----\n", $invalidTemplates)
+            "Invalid templates found:\n\n" . implode("\n-----\n", $invalidTemplates)
         );
     }
 
@@ -58,7 +58,7 @@ class TemplateFilesTest extends \Magento\TestFramework\TestCase\AbstractIntegrit
     }
 
     /**
-     * Get ui_component list that are defined in layout
+     * Get templates list that are defined in layout
      *
      * @param  \SimpleXMLElement $layoutXml
      * @return array

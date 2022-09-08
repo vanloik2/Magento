@@ -439,7 +439,7 @@ class PriceTest extends TestCase
     }
 
     /**
-     * Check bundle prices from index.phtml table and final bundle option price.
+     * Check bundle prices from index table and final bundle option price.
      *
      * @param string $sku
      * @param array $indexPrices
@@ -454,7 +454,7 @@ class PriceTest extends TestCase
     }
 
     /**
-     * Asserts price data in index.phtml table.
+     * Asserts price data in index table.
      *
      * @param int $productId
      * @param array $expectedPrices

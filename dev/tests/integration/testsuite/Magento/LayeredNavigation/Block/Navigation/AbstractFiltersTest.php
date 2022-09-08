@@ -310,7 +310,7 @@ abstract class AbstractFiltersTest extends TestCase
     }
 
     /**
-     * Clears instances and rebuilds seqrch index.phtml.
+     * Clears instances and rebuilds seqrch index.
      *
      * @return void
      */

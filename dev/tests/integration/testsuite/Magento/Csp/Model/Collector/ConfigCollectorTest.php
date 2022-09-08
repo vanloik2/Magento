@@ -66,7 +66,7 @@ class ConfigCollectorTest extends TestCase
             'frame-src' => new FetchPolicy('frame-src', false, [], [], true, false, false, [], [], true),
             'img-src' => new FetchPolicy('img-src', false, [], ['data'], true),
             'manifest-src' => new FetchPolicy('manifest-src', false, [], [], true),
-            'web-src' => new FetchPolicy('web-src', false, [], [], true),
+            'media-src' => new FetchPolicy('media-src', false, [], [], true),
             'object-src' => new FetchPolicy('object-src', false, [], [], true),
             'script-src' => new FetchPolicy('script-src', false, [], [], true, false, false, [], [], false, true),
             'style-src' => new FetchPolicy('style-src', false, [], [], true),
@@ -125,10 +125,10 @@ class ConfigCollectorTest extends TestCase
      * @magentoConfigFixture default_store csp/policies/storefront/manifests/none 0
      * @magentoConfigFixture default_store csp/policies/storefront/manifests/self 1
      * @magentoConfigFixture default_store csp/policies/storefront/manifests/inline 0
-     * @magentoConfigFixture default_store csp/policies/storefront/web/policy_id web-src
-     * @magentoConfigFixture default_store csp/policies/storefront/web/none 0
-     * @magentoConfigFixture default_store csp/policies/storefront/web/self 1
-     * @magentoConfigFixture default_store csp/policies/storefront/web/inline 0
+     * @magentoConfigFixture default_store csp/policies/storefront/media/policy_id media-src
+     * @magentoConfigFixture default_store csp/policies/storefront/media/none 0
+     * @magentoConfigFixture default_store csp/policies/storefront/media/self 1
+     * @magentoConfigFixture default_store csp/policies/storefront/media/inline 0
      * @magentoConfigFixture default_store csp/policies/storefront/objects/policy_id object-src
      * @magentoConfigFixture default_store csp/policies/storefront/objects/none 0
      * @magentoConfigFixture default_store csp/policies/storefront/objects/self 1

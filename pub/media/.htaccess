@@ -23,8 +23,8 @@ SetHandler default-handler
     Options +FollowSymLinks
     RewriteEngine on
 
-    ## you can put here your pub/web folder path relative to web root
-    #RewriteBase /magento/pub/web/
+    ## you can put here your pub/media folder path relative to web root
+    #RewriteBase /magento/pub/media/
 
 ############################################
 ## never rewrite for existing files

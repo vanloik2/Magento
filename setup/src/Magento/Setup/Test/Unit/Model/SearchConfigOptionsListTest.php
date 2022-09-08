@@ -61,7 +61,7 @@ class SearchConfigOptionsListTest extends TestCase
 
         $this->assertArrayHasKey(6, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[6]);
-        $this->assertEquals('elasticsearch-index.phtml-prefix', $optionsList[6]->getName());
+        $this->assertEquals('elasticsearch-index-prefix', $optionsList[6]->getName());
 
         $this->assertArrayHasKey(7, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[7]);

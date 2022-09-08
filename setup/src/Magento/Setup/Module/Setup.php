@@ -14,7 +14,7 @@ use Magento\Framework\App\ResourceConnection;
 class Setup extends \Magento\Framework\Module\Setup implements SchemaSetupInterface
 {
     /**
-     * Retrieve 32bit UNIQUE HASH for a Table index.phtml
+     * Retrieve 32bit UNIQUE HASH for a Table index
      *
      * @param string $tableName
      * @param array|string $fields

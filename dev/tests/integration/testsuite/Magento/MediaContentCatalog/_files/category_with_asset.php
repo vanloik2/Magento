@@ -17,7 +17,7 @@ $category->setId(
 )->setName(
     'Category 1'
 )->setDescription(
-    'content {{web url="testDirectory/path.jpg"}} content'
+    'content {{media url="testDirectory/path.jpg"}} content'
 )->setParentId(
     2
 )->setPath(

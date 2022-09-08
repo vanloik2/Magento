@@ -204,7 +204,7 @@ class ConfigModelTest extends TestCase
         $this->expectException('Exception');
         $this->expectExceptionMessage('Missing write permissions to the following paths:');
         $this->filePermissions->expects($this->once())->method('getMissingWritablePathsForInstallation')
-            ->willReturn(['/a/ro/dir', '/web']);
+            ->willReturn(['/a/ro/dir', '/media']);
         $this->configModel->process([]);
     }
 }

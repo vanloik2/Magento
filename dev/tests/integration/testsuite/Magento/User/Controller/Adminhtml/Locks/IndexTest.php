@@ -14,14 +14,14 @@ namespace Magento\User\Controller\Adminhtml\Locks;
 class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendController
 {
     /**
-     * Test index.phtml action
+     * Test index action
      *
      * @magentoDbIsolation enabled
      * @magentoDataFixture Magento/User/_files/locked_users.php
      */
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/locks/index.phtml');
+        $this->dispatch('backend/admin/locks/index');
 
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString('<h1 class="page-title">Locked Users</h1>', $body);

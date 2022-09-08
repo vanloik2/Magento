@@ -27,12 +27,12 @@ return ['arguments' => [
             'client_root' => [
                 'name' => 'client_root',
                 'xsi:type' => 'string',
-                'value' => 'mui/index.phtml/render',
+                'value' => 'mui/index/render',
             ],
             'template' => [
                 'name' => 'template',
                 'xsi:type' => 'string',
-                'value' => 'ui_component/listing/default',
+                'value' => 'templates/listing/default',
             ],
             'spinner' => [
                 'name' => 'spinner',
@@ -94,7 +94,7 @@ return ['arguments' => [
                                         'update_url' => [
                                             'name' => 'update_url',
                                             'xsi:type' => 'url',
-                                            'path' => 'mui/index.phtml/render',
+                                            'path' => 'mui/index/render',
                                         ],
                                         'component' => [
                                             'name' => 'component',
@@ -163,7 +163,7 @@ return ['arguments' => [
                                 'link' => [
                                     'name' => 'link',
                                     'xsi:type' => 'url',
-                                    'path' => 'bulk/index.phtml',
+                                    'path' => 'bulk/index',
                                 ],
                                 'linkText' => [
                                     'name' => 'linkText',
@@ -338,12 +338,12 @@ return ['arguments' => [
                                                             'value' => '1',
                                                         ],
                                                     ],
-                                                    'path' => 'mui/index.phtml/render_handle',
+                                                    'path' => 'mui/index/render_handle',
                                                 ],
                                                 'columnsProvider' => [
                                                     'name' => 'columnsProvider',
                                                     'xsi:type' => 'string',
-                                                    'value' => 'ns = test_component, index.phtml = columns',
+                                                    'value' => 'ns = test_component, index = columns',
                                                 ],
                                                 'component' => [
                                                     'name' => 'component',

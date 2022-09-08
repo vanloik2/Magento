@@ -19,7 +19,7 @@ use Magento\Store\Model\Store;
 use Magento\TestFramework\TestCase\AbstractBackendController;
 
 /**
- * Checks category product index.phtml in cases when category unassigned from product
+ * Checks category product index in cases when category unassigned from product
  *
  * @magentoDataFixture Magento/Catalog/_files/category_product_assigned_to_website.php
  * @magentoAppArea adminhtml
@@ -117,7 +117,7 @@ class CategoryIndexTest extends AbstractBackendController
     }
 
     /**
-     * Fetch data from category product index.phtml table
+     * Fetch data from category product index table
      *
      * @return array
      */

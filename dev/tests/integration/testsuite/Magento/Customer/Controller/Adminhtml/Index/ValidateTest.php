@@ -13,7 +13,7 @@ use Magento\Framework\Serialize\SerializerInterface;
 use Magento\TestFramework\TestCase\AbstractBackendController;
 
 /**
- * Tests for validation customer via backend/customer/index.phtml/validate controller.
+ * Tests for validation customer via backend/customer/index/validate controller.
  *
  * @magentoAppArea adminhtml
  */
@@ -109,7 +109,7 @@ class ValidateTest extends AbstractBackendController
     }
 
     /**
-     * Validate customer using backend/customer/index.phtml/validate action.
+     * Validate customer using backend/customer/index/validate action.
      *
      * @param array $postData
      * @return void
@@ -118,6 +118,6 @@ class ValidateTest extends AbstractBackendController
     {
         $this->getRequest()->setMethod(HttpRequest::METHOD_POST);
         $this->getRequest()->setPostValue($postData);
-        $this->dispatch('backend/customer/index.phtml/validate');
+        $this->dispatch('backend/customer/index/validate');
     }
 }

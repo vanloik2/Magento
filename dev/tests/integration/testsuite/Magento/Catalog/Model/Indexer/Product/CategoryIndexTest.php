@@ -185,7 +185,7 @@ class CategoryIndexTest extends TestCase
     }
 
     /**
-     * Fetch data from category product index.phtml table
+     * Fetch data from category product index table
      *
      * @param int $productId
      * @return int

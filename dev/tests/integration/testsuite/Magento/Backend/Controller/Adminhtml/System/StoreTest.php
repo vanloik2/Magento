@@ -55,7 +55,7 @@ class StoreTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
 
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/system_store/index.phtml');
+        $this->dispatch('backend/admin/system_store/index');
 
         $response = $this->getResponse()->getBody();
 

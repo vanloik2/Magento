@@ -365,7 +365,7 @@ QUERY;
     }
 
     /**
-     * Assert web gallery fields
+     * Assert media gallery fields
      *
      * @param array $product
      */

@@ -95,21 +95,21 @@ class UrlTest extends \PHPUnit\Framework\TestCase
 
         $model = Bootstrap::getObjectManager()->create(\Magento\Framework\Url::class, ['request' => $request]);
 
-        $secureUrl = $model->getUrl('some/index.phtml/controller', ['_nosid' => 1]);
+        $secureUrl = $model->getUrl('some/index/controller', ['_nosid' => 1]);
         $this->assertEquals(
             'https://sample.com/index.php/some/index/controller/',
             $secureUrl,
             'Default URL in secure area is incorrect'
         );
 
-        $secureUrl = $model->getUrl('some/index.phtml/controller', ['_secure' => true, '_nosid' => 1]);
+        $secureUrl = $model->getUrl('some/index/controller', ['_secure' => true, '_nosid' => 1]);
         $this->assertEquals(
             'https://sample.com/index.php/some/index/controller/',
             $secureUrl,
             'Secure URL in secure area is incorrect'
         );
 
-        $unsecureUrl = $model->getUrl('some/index.phtml/controller', ['_secure' => false, '_nosid' => 1]);
+        $unsecureUrl = $model->getUrl('some/index/controller', ['_secure' => false, '_nosid' => 1]);
         $this->assertEquals(
             'http://sample.com/index.php/some/index/controller/',
             $unsecureUrl,
@@ -138,21 +138,21 @@ class UrlTest extends \PHPUnit\Framework\TestCase
 
         $model = Bootstrap::getObjectManager()->create(\Magento\Framework\Url::class, ['request' => $request]);
 
-        $secureUrl = $model->getUrl('some/index.phtml/controller', ['_nosid' => 1]);
+        $secureUrl = $model->getUrl('some/index/controller', ['_nosid' => 1]);
         $this->assertEquals(
             'http://sample.com/index.php/some/index/controller/',
             $secureUrl,
             'Default URL in unsecure area is incorrect'
         );
 
-        $secureUrl = $model->getUrl('some/index.phtml/controller', ['_secure' => true, '_nosid' => 1]);
+        $secureUrl = $model->getUrl('some/index/controller', ['_secure' => true, '_nosid' => 1]);
         $this->assertEquals(
             'https://sample.com/index.php/some/index/controller/',
             $secureUrl,
             'Secure URL in unsecure area is incorrect'
         );
 
-        $unsecureUrl = $model->getUrl('some/index.phtml/controller', ['_secure' => false, '_nosid' => 1]);
+        $unsecureUrl = $model->getUrl('some/index/controller', ['_secure' => false, '_nosid' => 1]);
         $this->assertEquals(
             'http://sample.com/index.php/some/index/controller/',
             $unsecureUrl,
@@ -181,7 +181,7 @@ class UrlTest extends \PHPUnit\Framework\TestCase
          * Get url with type specified in params
          */
         $mediaUrl = $this->model->getBaseUrl(['_type' => \Magento\Framework\UrlInterface::URL_TYPE_MEDIA]);
-        $this->assertEquals('http://localhost/media/', $mediaUrl, 'Incorrect web url');
+        $this->assertEquals('http://localhost/media/', $mediaUrl, 'Incorrect media url');
         $this->assertEquals('http://localhost/index.php/', $this->model->getBaseUrl(), 'Incorrect link url');
     }
 
@@ -237,7 +237,7 @@ class UrlTest extends \PHPUnit\Framework\TestCase
         );
         $this->assertEquals(
             'http://localhost/index.php/fancy_uri',
-            $this->model->getRouteUrl('core/index.phtml/index.phtml', ['_direct' => 'fancy_uri'])
+            $this->model->getRouteUrl('core/index/index', ['_direct' => 'fancy_uri'])
         );
     }
 

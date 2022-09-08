@@ -10,7 +10,7 @@ namespace Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save\InputType;
 use Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save\AbstractSaveAttributeTest;
 
 /**
- * Test cases related to create attribute with input type web image.
+ * Test cases related to create attribute with input type media image.
  *
  * @magentoDbIsolation enabled
  * @magentoAppArea adminhtml

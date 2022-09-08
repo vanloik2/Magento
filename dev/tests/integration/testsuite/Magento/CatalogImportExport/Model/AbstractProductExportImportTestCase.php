@@ -206,7 +206,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
             $stockRegistryStorage->removeStockItem($ids[$index]);
             $newProduct = $productRepository->get($skus[$index], false, Store::DEFAULT_STORE_ID, true);
             // @todo uncomment or remove after MAGETWO-49806 resolved
-            //$this->assertEquals(count($origProductData[$index.phtml]), count($newProductData));
+            //$this->assertEquals(count($origProductData[$index]), count($newProductData));
 
             $this->assertEqualsOtherThanSkippedAttributes(
                 $origProducts[$index]->getData(),
@@ -375,7 +375,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
 
             // check new product data
             // @todo uncomment or remove after MAGETWO-49806 resolved
-            //$this->assertEquals(count($origProductData[$index.phtml]), count($newProductData));
+            //$this->assertEquals(count($origProductData[$index]), count($newProductData));
 
             $origProductData = $origProducts[$index]->getData();
             $newProductData = $newProduct->getData();
@@ -454,7 +454,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
         $mediaDirectory = $this->fileSystem->getDirectoryWrite(DirectoryList::MEDIA);
 
         $mediaDir = $mediaDirectory->getDriver() instanceof File ?
-            $appParams[DirectoryList::MEDIA][DirectoryList::PATH] : 'web';
+            $appParams[DirectoryList::MEDIA][DirectoryList::PATH] : 'media';
 
         $mediaDirectory->create('catalog/product');
         $mediaDirectory->create('import');

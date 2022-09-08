@@ -8,7 +8,7 @@ namespace Magento\CurrencySymbol\Controller\Adminhtml\System\Currencysymbol;
 class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendController
 {
     /**
-     * Test index.phtml action
+     * Test index action
      *
      * @magentoConfigFixture               currency/options/allow USD
      * @magentoAppIsolation enabled
@@ -16,7 +16,7 @@ class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
      */
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/system_currencysymbol/index.phtml');
+        $this->dispatch('backend/admin/system_currencysymbol/index');
 
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString('id="currency-symbols-form"', $body);

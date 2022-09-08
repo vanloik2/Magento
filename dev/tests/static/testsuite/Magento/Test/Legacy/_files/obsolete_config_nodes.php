@@ -39,10 +39,10 @@ return [
     '/config/global/importexport' => 'This configuration moved to import.xml and export.xml files',
     '/config/global/catalog/product/type' => 'This configuration moved to product_types.xml file',
     '/config/global/catalog/product/options' => 'This configuration moved to product_options.xml file',
-    '/config/global/catalog/product/web/image_types' => 'This configuration moved to Di configuration of ' .
+    '/config/global/catalog/product/media/image_types' => 'This configuration moved to Di configuration of ' .
     '\Magento\Backend\Block\Catalog\Product\Frontend\Product\Watermark',
     '/config/global/eav_attributes' => 'This configuration moved to eav_attributes.xml file',
-    '/config/global/index.phtml' => 'This configuration moved to indexers.xml file',
+    '/config/global/index' => 'This configuration moved to indexers.xml file',
     '/config/global/catalogrule' => 'This configuration moved to Di configuration of \Magento\CatalogRule\Model\Rule',
     '/config/global/salesrule' => 'This configuration moved to Di configuration of \Magento\SalesRule\Helper\Coupon',
     '/config/global/session' => 'This configuration moved to Di configuration of \Magento\Framework\Session\Validator',

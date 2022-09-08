@@ -13,7 +13,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Position test for the ArgumentsSerialization class.
+ * Unit test for the ArgumentsSerialization class.
  *
  * @deprecated We don't need anymore serialize arguments, this class will be removed in the next
  *             backward incompatible release.

@@ -102,11 +102,11 @@ class ExportTest extends AbstractBackendController
     }
 
     /**
-     * Test index.phtml action
+     * Test index action
      */
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/export/index.phtml');
+        $this->dispatch('backend/admin/export/index');
 
         $body = $this->getResponse()->getBody();
 

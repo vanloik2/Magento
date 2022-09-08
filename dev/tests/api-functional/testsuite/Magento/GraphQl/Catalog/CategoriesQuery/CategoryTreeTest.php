@@ -606,18 +606,18 @@ QUERY;
         $this->assertArrayNotHasKey('errors', $response);
         $this->assertNotEmpty($response['categories']);
         $categories = $response['categories']['items'];
-        $storeBaseUrl = $this->objectManager->get(StoreManagerInterface::class)->getStore()->getBaseUrl('web');
+        $storeBaseUrl = $this->objectManager->get(StoreManagerInterface::class)->getStore()->getBaseUrl('media');
         $expectedImageUrl = rtrim($storeBaseUrl, '/') . '/' . ltrim($categoryModel->getImage(), '/');
-        $expectedImageUrl = str_replace('index.phtml.php/', '', $expectedImageUrl);
+        $expectedImageUrl = str_replace('index.php/', '', $expectedImageUrl);
 
         $this->assertEquals($categoryId, $categories[0]['id']);
         $this->assertEquals('Parent Image Category', $categories[0]['name']);
-        $categories[0]['image'] = str_replace('index.phtml.php/', '', $categories[0]['image']);
+        $categories[0]['image'] = str_replace('index.php/', '', $categories[0]['image']);
         $this->assertEquals($expectedImageUrl, $categories[0]['image']);
 
         $childCategory = $categories[0]['children'][0];
         $this->assertEquals('Child Image Category', $childCategory['name']);
-        $childCategory['image'] = str_replace('index.phtml.php/', '', $childCategory['image']);
+        $childCategory['image'] = str_replace('index.php/', '', $childCategory['image']);
         $this->assertEquals($expectedImageUrl, $childCategory['image']);
     }
 
@@ -665,7 +665,7 @@ QUERY;
                 'image_prefix' => ''
             ],
             'with_pub_media_strategy' => [
-                'image_prefix' => '/web/catalog/category/'
+                'image_prefix' => '/media/catalog/category/'
             ],
             'catalog_category_strategy' => [
                 'image_prefix' => 'catalog/category/'

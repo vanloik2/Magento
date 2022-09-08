@@ -32,7 +32,7 @@ class PhpTest extends TestCase
     }
 
     /**
-     * See that ui_component get access to certain variables.
+     * See that templates get access to certain variables.
      *
      * @return void
      */

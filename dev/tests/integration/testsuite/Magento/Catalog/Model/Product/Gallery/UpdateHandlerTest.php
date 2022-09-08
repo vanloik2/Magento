@@ -35,7 +35,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Provides tests for web gallery images update during product save.
+ * Provides tests for media gallery images update during product save.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -795,7 +795,7 @@ class UpdateHandlerTest extends TestCase
     }
 
     /**
-     * Duplicate web gallery entries for a product
+     * Duplicate media gallery entries for a product
      *
      * @param string $imagePath
      * @param string $productSku

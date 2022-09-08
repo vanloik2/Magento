@@ -30,7 +30,7 @@ class ValidatorFileMock extends TestCase
                 'title' => "test.jpg",
                 'quote_path' => "custom_options/quote/s/t/4624d2.jpg",
                 'order_path' => "custom_options/order/s/t/89d25b4624d2.jpg",
-                "fullpath" => "pub/web/custom_options/quote/s/t/e47389d25b4624d2.jpg",
+                "fullpath" => "pub/media/custom_options/quote/s/t/e47389d25b4624d2.jpg",
                 "size" => "71901",
                 "width" => 5,
                 "height" => 5,

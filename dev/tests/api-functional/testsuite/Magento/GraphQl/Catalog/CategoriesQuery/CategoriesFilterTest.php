@@ -429,7 +429,7 @@ QUERY;
 }
 QUERY;
         $storeManager = Bootstrap::getObjectManager()->get(StoreManagerInterface::class);
-        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('web');
+        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('media');
 
         $expected = "catalog/category/magento_long_image_name_magento_long_image_name_magento_long_image_name.jpg";
         $expectedImageUrl = rtrim($storeBaseUrl, '/') . '/' . $expected;

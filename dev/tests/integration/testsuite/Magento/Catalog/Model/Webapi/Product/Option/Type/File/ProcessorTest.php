@@ -63,13 +63,13 @@ class ProcessorTest extends \PHPUnit\Framework\TestCase
         return [
             // default config
             [[]],
-            // config from pub/index.phtml.php
+            // config from pub/index.php
             [
                 [
                     DirectoryList::PUB => [DirectoryList::URL_PATH => ''],
-                    DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'web'],
+                    DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'media'],
                     DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
-                    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'web/upload'],
+                    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
                 ]
             ],
         ];

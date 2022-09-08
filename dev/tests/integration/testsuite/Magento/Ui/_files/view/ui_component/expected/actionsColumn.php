@@ -13,8 +13,8 @@ return [
                     'name' => 'config',
                     'xsi:type' => 'array',
                     'item' => [
-                        'ui_component' => [
-                            'name' => 'ui_component',
+                        'templates' => [
+                            'name' => 'templates',
                             'xsi:type' => 'array',
                             'item' => [
                                 'actions' => [
@@ -80,8 +80,8 @@ return [
                                                         ],
                                                     ],
                                                 ],
-                                                'index.phtml' => [
-                                                    'name' => 'index.phtml',
+                                                'index' => [
+                                                    'name' => 'index',
                                                     'xsi:type' => 'string',
                                                     'value' => '0'
                                                 ],

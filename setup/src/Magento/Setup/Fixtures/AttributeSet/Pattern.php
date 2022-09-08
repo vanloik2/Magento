@@ -34,7 +34,7 @@ class Pattern
      * @param string $name
      * @param int $attributesPerSet
      * @param int $optionsPerAttribute
-     * @param callable $attributePattern callback in f($index.phtml, $attributeData) format
+     * @param callable $attributePattern callback in f($index, $attributeData) format
      * @return array
      */
     public function generateAttributeSet(

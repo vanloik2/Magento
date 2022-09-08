@@ -24,7 +24,7 @@ class RenderTest extends AbstractController
     {
         $this->getRequest()->setParam('namespace', 'widget_recently_viewed');
         $this->getRequest()->setHeaders(Headers::fromString('Accept: application/json'));
-        $this->dispatch('mui/index.phtml/render');
+        $this->dispatch('mui/index/render');
         $this->assertNotEmpty($contentType = $this->getResponse()->getHeader('Content-Type'));
         $this->assertEquals('application/json', $contentType->getFieldValue());
     }

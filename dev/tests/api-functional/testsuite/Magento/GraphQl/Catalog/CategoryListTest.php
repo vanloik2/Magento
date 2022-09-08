@@ -412,7 +412,7 @@ categoryList(filters: {ids: {in: ["$categoryId"]}}) {
 }
 QUERY;
         $storeManager = $this->objectManager->get(StoreManagerInterface::class);
-        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('web');
+        $storeBaseUrl = $storeManager->getStore()->getBaseUrl('media');
 
         $expected = "catalog/category/magento_long_image_name_magento_long_image_name_magento_long_image_name.jpg";
         $expectedImageUrl = rtrim($storeBaseUrl, '/') . '/' . $expected;
@@ -421,8 +421,8 @@ QUERY;
         $categoryList = $response['categoryList'];
         $this->assertArrayNotHasKey('errors', $response);
         $this->assertNotEmpty($response['categoryList']);
-        $expectedImageUrl = str_replace('index.phtml.php/', '', $expectedImageUrl);
-        $categoryList[0]['image'] = str_replace('index.phtml.php/', '', $categoryList[0]['image']);
+        $expectedImageUrl = str_replace('index.php/', '', $expectedImageUrl);
+        $categoryList[0]['image'] = str_replace('index.php/', '', $categoryList[0]['image']);
         $this->assertEquals('Parent Image Category', $categoryList[0]['name']);
         $this->assertEquals($expectedImageUrl, $categoryList[0]['image']);
     }

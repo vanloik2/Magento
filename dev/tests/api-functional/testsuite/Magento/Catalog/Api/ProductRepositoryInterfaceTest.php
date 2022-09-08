@@ -757,12 +757,12 @@ class ProductRepositoryInterfaceTest extends WebapiAbstract
     }
 
     /**
-     * Test product with web gallery
+     * Test product with media gallery
      */
     public function testProductWithMediaGallery()
     {
         $encodedImage = $this->getTestImage();
-        //create a product with web gallery
+        //create a product with media gallery
         $filename1 = 'tiny1' . time() . '.jpg';
         $filename2 = 'tiny2' . time() . '.jpeg';
         $productData = $this->getSimpleProductData();
@@ -797,7 +797,7 @@ class ProductRepositoryInterfaceTest extends WebapiAbstract
             ],
         ];
         $this->assertEquals($expectedValue, $mediaGalleryEntries);
-        //update the product web gallery
+        //update the product media gallery
         $response['media_gallery_entries'] = [
             [
                 'id' => $id,
@@ -831,7 +831,7 @@ class ProductRepositoryInterfaceTest extends WebapiAbstract
         $this->assertCount(1, $mediaGalleryEntries);
         unset($mediaGalleryEntries[0]['id']);
         $this->assertEquals($expectedValue, $mediaGalleryEntries);
-        //pass empty array, delete all existing web gallery entries
+        //pass empty array, delete all existing media gallery entries
         $response['media_gallery_entries'] = [];
         $response = $this->updateProduct($response);
         $this->assertEmpty($response['media_gallery_entries']);
@@ -1743,7 +1743,7 @@ class ProductRepositoryInterfaceTest extends WebapiAbstract
     }
 
     /**
-     * Get web gallery data
+     * Get media gallery data
      *
      * @param string $filename
      * @param string $encodedImage

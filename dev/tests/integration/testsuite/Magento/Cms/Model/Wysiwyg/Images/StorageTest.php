@@ -127,7 +127,7 @@ class StorageTest extends \PHPUnit\Framework\TestCase
             $this->assertInstanceOf(DataObject::class, $item);
             $this->assertStringEndsWith('/' . $fileName, $item->getUrl());
             $this->assertEquals(
-                '/web/.thumbsMagentoCmsModelWysiwygImagesStorageTest/magento_image.jpg',
+                '/media/.thumbsMagentoCmsModelWysiwygImagesStorageTest/magento_image.jpg',
                 $thumbUrl,
                 "Check if Thumbnail URL is equal to the generated URL"
             );
@@ -279,7 +279,7 @@ class StorageTest extends \PHPUnit\Framework\TestCase
             [
                 'fileName' => 'test.swf',
                 'fileType' => 'application/x-shockwave-flash',
-                'storageType' => 'web',
+                'storageType' => 'media',
             ],
         ];
     }

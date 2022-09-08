@@ -306,7 +306,7 @@ class ProductTest extends TestCase
     }
 
     /**
-     * Clear index.phtml data
+     * Clear index data
      */
     private function clearIndex()
     {

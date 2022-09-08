@@ -24,7 +24,7 @@ class QuoteGenerator
     const BATCH_SIZE = 1000;
 
     /**
-     * INSERT query ui_component.
+     * INSERT query templates.
      *
      * @var array
      */
@@ -336,7 +336,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get store id for quote item by product index.phtml.
+     * Get store id for quote item by product index.
      *
      * @param int $entityId
      * @return int
@@ -347,7 +347,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get store name for quote item by product index.phtml.
+     * Get store name for quote item by product index.
      *
      * @param int $entityId
      * @return string
@@ -358,7 +358,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product id for quote item by product index.phtml.
+     * Get product id for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -371,7 +371,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product SKU for quote item by product index.phtml.
+     * Get product SKU for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -384,7 +384,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product name for quote item by product index.phtml.
+     * Get product name for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -397,7 +397,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product buy request for quote item by product index.phtml.
+     * Get product buy request for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -410,7 +410,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get configurable product child id for quote item by product index.phtml.
+     * Get configurable product child id for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -423,7 +423,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get configurable product child id for quote item by product index.phtml.
+     * Get configurable product child id for quote item by product index.
      *
      * @param int $entityId
      * @param int $index
@@ -436,7 +436,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get index.phtml of item in product stub array.
+     * Get index of item in product stub array.
      *
      * @param int $entityId
      * @return int
@@ -518,7 +518,7 @@ class QuoteGenerator
     }
 
     /**
-     * Load and prepare INSERT query ui_component data from external file.
+     * Load and prepare INSERT query templates data from external file.
      *
      * Queries are prepared using external json file, where keys are DB column names and values represent data,
      * to be inserted to the table. Data may contain a default value or a placeholder which is replaced later during

@@ -111,7 +111,7 @@ class CartTest extends AbstractCartTest
      */
     public function testGetGridUrl(): void
     {
-        $this->assertStringContainsString('/backend/customer/index.phtml/cart', $this->block->getGridUrl());
+        $this->assertStringContainsString('/backend/customer/index/cart', $this->block->getGridUrl());
     }
 
     /**

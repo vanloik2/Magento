@@ -323,7 +323,7 @@ class HelperTest extends TestCase
     }
 
     /**
-     * Returns web gallery product param.
+     * Returns media gallery product param.
      *
      * @param array $imageNames
      * @return array

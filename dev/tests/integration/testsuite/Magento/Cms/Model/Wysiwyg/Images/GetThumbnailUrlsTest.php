@@ -157,12 +157,12 @@ class GetThumbnailUrlsTest extends \PHPUnit\Framework\TestCase
             [
                 '/MagentoCmsModelWysiwygImagesStorageTest',
                 'image2.png',
-                ['/web/.thumbsMagentoCmsModelWysiwygImagesStorageTest/image2.png']
+                ['/media/.thumbsMagentoCmsModelWysiwygImagesStorageTest/image2.png']
             ],
             [
                 '/MagentoCmsModelWysiwygImagesStorageTest/pages',
                 'image3.png',
-                ['/web/.thumbsMagentoCmsModelWysiwygImagesStorageTest/pages/image3.png']
+                ['/media/.thumbsMagentoCmsModelWysiwygImagesStorageTest/pages/image3.png']
             ]
         ];
     }

@@ -53,7 +53,7 @@ class FilesystemTest extends \PHPUnit\Framework\TestCase
     public function testGetUri()
     {
         $this->assertStringContainsString(
-            'web',
+            'media',
             $this->filesystem->getDirectoryRead(AppDirectoryList::MEDIA)->getAbsolutePath()
         );
     }

@@ -119,7 +119,7 @@ class EditTest extends TestCase
             );
 
             $this->assertMatchesRegularExpression(
-                '/http:\/\/localhost\/index.phtml.php\/.*\/category/',
+                '/http:\/\/localhost\/index.php\/.*\/category/',
                 $categoryBlock->getItemUrl(),
                 'Child block with category contains invalid URL'
             );

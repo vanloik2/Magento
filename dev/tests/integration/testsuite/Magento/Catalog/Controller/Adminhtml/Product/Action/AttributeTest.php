@@ -83,7 +83,7 @@ class AttributeTest extends AbstractBackendController
         /** @var Attribute $attributeHelper */
         $attributeHelper = $this->_objectManager->get(Attribute::class);
         $expectedUrl = $urlBuilder->getUrl(
-            'catalog/product/index.phtml',
+            'catalog/product/index',
             ['store' => $attributeHelper->getSelectedStoreId()]
         );
         $isRedirectPresent = false;

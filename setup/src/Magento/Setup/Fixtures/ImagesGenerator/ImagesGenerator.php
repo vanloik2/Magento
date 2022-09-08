@@ -8,7 +8,7 @@ namespace Magento\Setup\Fixtures\ImagesGenerator;
 use Magento\Framework\App\Filesystem\DirectoryList;
 
 /**
- * Create image with passed config and put it to web tmp folder
+ * Create image with passed config and put it to media tmp folder
  */
 class ImagesGenerator
 {

@@ -254,17 +254,17 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
         return [
             'getUrl from same module' => [
                 'Magento\Cms\SomeClass',
-                '$this->getUrl("cms/index.phtml/index.phtml")',
+                '$this->getUrl("cms/index/index")',
                 []
             ],
             'getUrl from another module' => [
                 'Magento\SomeModule\SomeClass',
-                '$this->getUrl("cms/index.phtml/index.phtml")',
+                '$this->getUrl("cms/index/index")',
                 [
                     [
                         'modules' => ['Magento\Cms'],
                         'type' => RuleInterface::TYPE_HARD,
-                        'source' => 'getUrl("cms/index.phtml/index.phtml"',
+                        'source' => 'getUrl("cms/index/index"',
                     ]
                 ]
             ],
@@ -335,7 +335,7 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
     public function getDependencyInfoDataCaseGetTemplateUrlDataProvider()
     {
         return [ 'getUrl from ignore template' => [
-            'app/code/Magento/Backend/view/adminhtml/ui_component/dashboard/totalbar/script.phtml',
+            'app/code/Magento/Backend/view/adminhtml/templates/dashboard/totalbar/script.phtml',
             '$getUrl("adminhtml/*/ajaxBlock")',
             []]];
     }
@@ -382,11 +382,11 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
         return [
             'wildcard controller route' => [
                 'Magento\SomeModule\Controller\ControllerName\SomeClass',
-                '$this->getUrl("cms/*/index.phtml")',
+                '$this->getUrl("cms/*/index")',
                 [
                     'route_id' => 'cms',
                     'controller_name' => 'controllername',
-                    'action_name' => 'index.phtml'
+                    'action_name' => 'index'
                 ]
             ],
             'adminhtml wildcard controller route' => [
@@ -398,7 +398,7 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
                         'action_name' => 'deletestorepost'
                     ]
             ],
-            'index.phtml wildcard' => [
+            'index wildcard' => [
                 'Magento\Backend\Controller\System\Store\DeleteStore',
                 '$this->getUrl("routeid/controllername/*")',
                 [
@@ -438,7 +438,7 @@ class PhpRuleTest extends \PHPUnit\Framework\TestCase
             'getUrl from same module' => [
                 'Magento\SomeModule\SomeClass',
                 '$this->getUrl("someModule")',
-                new LocalizedException(__('Invalid URL path: %1', 'somemodule/index.phtml/index.phtml')),
+                new LocalizedException(__('Invalid URL path: %1', 'somemodule/index/index')),
             ],
             'getUrl from unknown wildcard path' => [
                 'Magento\Catalog\Controller\Product\View',

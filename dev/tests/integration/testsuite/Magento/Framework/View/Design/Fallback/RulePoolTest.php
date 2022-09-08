@@ -189,28 +189,28 @@ class RulePoolTest extends \PHPUnit\Framework\TestCase
                 \Magento\Framework\View\Design\Fallback\RulePool::TYPE_TEMPLATE_FILE,
                 [],
                 [
-                    $themeOnePath . '/ViewTest_Module/ui_component',
-                    $themeTwoPath . '/ViewTest_Module/ui_component',
-                    $modulePath . '/view/area/ui_component',
-                    $modulePath . '/view/base/ui_component',
+                    $themeOnePath . '/ViewTest_Module/templates',
+                    $themeTwoPath . '/ViewTest_Module/templates',
+                    $modulePath . '/view/area/templates',
+                    $modulePath . '/view/base/templates',
                 ],
             ],
             'template, non-modular' => [
                 \Magento\Framework\View\Design\Fallback\RulePool::TYPE_TEMPLATE_FILE,
                 ['namespace' => null, 'module_name' => null],
                 [
-                    $themeOnePath . '/ui_component',
-                    $themeTwoPath . '/ui_component',
+                    $themeOnePath . '/templates',
+                    $themeTwoPath . '/templates',
                 ],
             ],
             'template, non-modular-magento-core' => [
                 \Magento\Framework\View\Design\Fallback\RulePool::TYPE_TEMPLATE_FILE,
                 ['module_name' => 'Magento_Theme'],
                 [
-                    $themeOnePath . '/Magento_Theme/ui_component',
-                    $themeTwoPath . '/Magento_Theme/ui_component',
-                    $coreModulePath . '/view/area/ui_component',
-                    $coreModulePath . '/view/base/ui_component',
+                    $themeOnePath . '/Magento_Theme/templates',
+                    $themeTwoPath . '/Magento_Theme/templates',
+                    $coreModulePath . '/view/area/templates',
+                    $coreModulePath . '/view/base/templates',
                 ],
             ],
 

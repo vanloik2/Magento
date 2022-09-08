@@ -102,7 +102,7 @@ class DeleteFolderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path to check that directories under WYSIWYG web directory
+     * Execute method with correct directory path to check that directories under WYSIWYG media directory
      * can be removed.
      *
      * @return void
@@ -121,7 +121,7 @@ class DeleteFolderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path to check that directories under linked web directory
+     * Execute method with correct directory path to check that directories under linked media directory
      * can be removed.
      *
      * @magentoDataFixture Magento/Cms/_files/linked_media.php
@@ -150,7 +150,7 @@ class DeleteFolderTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with traversal directory path to check that there is no ability to remove folder which is not
-     * under web directory.
+     * under media directory.
      *
      * @return void
      * @magentoAppIsolation enabled

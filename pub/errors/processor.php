@@ -344,7 +344,7 @@ class Processor
     }
 
     /**
-     * Get index.phtml dir
+     * Get index dir
      *
      * @return string
      */

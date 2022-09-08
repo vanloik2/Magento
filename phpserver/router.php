@@ -39,7 +39,7 @@ $debug = function ($val) {
 
 if (php_sapi_name() === 'cli-server') {
     $debug("URI: {$_SERVER["REQUEST_URI"]}");
-    if (preg_match('/^\/(index.phtml|get|static)\.php(\/)?/', $_SERVER["REQUEST_URI"])) {
+    if (preg_match('/^\/(index|get|static)\.php(\/)?/', $_SERVER["REQUEST_URI"])) {
         return false;    // serve the requested resource as-is.
     }
 
@@ -61,7 +61,7 @@ if (php_sapi_name() === 'cli-server') {
 
     $magentoPackagePubDir = __DIR__."/../pub";
 
-    if (strpos($route, 'web/') === 0 ||
+    if (strpos($route, 'media/') === 0 ||
         strpos($route, 'opt/') === 0 ||
         strpos($route, 'static/') === 0 ||
         strpos($route, 'errors/default/css/') === 0 ||
@@ -108,14 +108,14 @@ if (php_sapi_name() === 'cli-server') {
                 $debug("static: $route");
                 include($magentoPackagePubDir.'/static.php');
                 exit;
-            } elseif (strpos($route, 'web/') === 0) {
-                $debug("web: $route");
+            } elseif (strpos($route, 'media/') === 0) {
+                $debug("media: $route");
                 include($magentoPackagePubDir.'/get.php');
                 exit;
             }
         }
     } else {
-        $debug("thunk to index.phtml in $route");
+        $debug("thunk to index in $route");
         include($magentoPackagePubDir.'/index.php');
     }
 }

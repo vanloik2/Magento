@@ -14,7 +14,7 @@ class ImportTest extends \Magento\TestFramework\TestCase\AbstractBackendControll
 {
     public function testGetFilterAction()
     {
-        $this->dispatch('backend/admin/import/index.phtml');
+        $this->dispatch('backend/admin/import/index');
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString(
             (string)\Magento\TestFramework\Helper\Bootstrap::getObjectManager()->get(

@@ -150,7 +150,7 @@ return [
         'from' => '0',
         'size' => '10000',
         'query' => 'bool_query',
-        'index.phtml' => 'bool_query_index_override',
+        'index' => 'bool_query_index_override',
     ],
     'filter_query' => [
         'dimensions' => [
@@ -215,7 +215,7 @@ return [
         'from' => '0',
         'size' => '10000',
         'query' => 'filter_query',
-        'index.phtml' => 'filter_query_index_override',
+        'index' => 'filter_query_index_override',
         'aggregations' => [],
     ],
     'new_match_query' => [
@@ -243,7 +243,7 @@ return [
         'from' => '0',
         'size' => '10000',
         'query' => 'new_match_query',
-        'index.phtml' => 'new_query_index',
+        'index' => 'new_query_index',
         'aggregations' => [],
     ],
 ];

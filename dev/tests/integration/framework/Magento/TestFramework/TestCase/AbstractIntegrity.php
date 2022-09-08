@@ -12,7 +12,7 @@ namespace Magento\TestFramework\TestCase;
 abstract class AbstractIntegrity extends \PHPUnit\Framework\TestCase
 {
     /**
-     * Cached index.phtml of enabled modules
+     * Cached index of enabled modules
      *
      * @var array
      */

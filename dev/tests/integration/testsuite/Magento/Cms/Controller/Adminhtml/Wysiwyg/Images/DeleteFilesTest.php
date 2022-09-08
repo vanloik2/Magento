@@ -122,7 +122,7 @@ class DeleteFilesTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path and file name to check that files under WYSIWYG web directory
+     * Execute method with correct directory path and file name to check that files under WYSIWYG media directory
      * can be removed.
      *
      * @param string $filename
@@ -208,7 +208,7 @@ class DeleteFilesTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Execute method with traversal file path to check that there is no ability to remove file which is not
-     * under web directory.
+     * under media directory.
      *
      * @return void
      */
@@ -231,7 +231,7 @@ class DeleteFilesTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Execute method with correct directory path and file name to check that files under linked web directory
+     * Execute method with correct directory path and file name to check that files under linked media directory
      * can be removed.
      *
      * @return void

@@ -109,7 +109,7 @@ class AttributeTest extends TestCase
         $expectedResult = [
             'dropdown_attribute' => [
                 'type' => 'integer',
-                'index.phtml' => false,
+                'index' => false,
             ],
             'dropdown_attribute_value' => [
                 'type' => 'text',
@@ -143,7 +143,7 @@ class AttributeTest extends TestCase
         $storeId = $this->storeManager->getStore()->getId();
         $mappedIndexerId = $this->indexNameResolver->getIndexMapping(Processor::INDEXER_ID);
         $indexName = $this->indexNameResolver->getIndexFromAlias($storeId, $mappedIndexerId);
-        $mappedAttributes = $this->client->getMapping(['index.phtml' => $indexName]);
+        $mappedAttributes = $this->client->getMapping(['index' => $indexName]);
         $pathField = $this->arrayManager->findPath('properties', $mappedAttributes);
 
         return $this->arrayManager->get($pathField, $mappedAttributes, []);

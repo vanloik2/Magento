@@ -94,7 +94,7 @@ class ContentTest extends \PHPUnit\Framework\TestCase
         $this->assertSame('image', $image->media_type);
         $this->assertSame('Image Alt Text', $image->label);
         $this->assertSame('Image Alt Text', $image->label_default);
-        $this->assertMatchesRegularExpression('~/web/catalog/product/m/a/magento_image~', $image->url);
+        $this->assertMatchesRegularExpression('~/media/catalog/product/m/a/magento_image~', $image->url);
     }
 
     /**

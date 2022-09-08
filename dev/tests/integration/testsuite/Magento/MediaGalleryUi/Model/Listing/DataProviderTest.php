@@ -15,7 +15,7 @@ use Magento\TestFramework\Helper\Bootstrap;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Checks standalone web gallery listing data provider behavior
+ * Checks standalone media gallery listing data provider behavior
  *
  * @magentoAppArea adminhtml
  */

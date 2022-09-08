@@ -62,7 +62,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
 
         $this->createServiceInfo = [
             'rest' => [
-                'resourcePath' => '/V1/products/simple/web',
+                'resourcePath' => '/V1/products/simple/media',
                 'httpMethod' => Request::HTTP_METHOD_POST,
             ],
             'soap' => [
@@ -74,7 +74,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
 
         $this->updateServiceInfo = [
             'rest' => [
-                'resourcePath' => '/V1/products/simple/web',
+                'resourcePath' => '/V1/products/simple/media',
                 'httpMethod' => Request::HTTP_METHOD_PUT,
             ],
             'soap' => [
@@ -272,7 +272,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
     }
 
     /**
-     * Update web gallery entity with new image.
+     * Update media gallery entity with new image.
      *
      * @magentoApiDataFixture Magento/Catalog/_files/product_with_image.php
      * @return void
@@ -380,7 +380,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
     public function testDelete()
     {
         $entryId = $this->getTargetGalleryEntryId();
-        $this->deleteServiceInfo['rest']['resourcePath'] = "/V1/products/simple/web/{$entryId}";
+        $this->deleteServiceInfo['rest']['resourcePath'] = "/V1/products/simple/media/{$entryId}";
         $requestData = [
             'sku' => 'simple',
             'entryId' => $this->getTargetGalleryEntryId(),
@@ -487,7 +487,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
             'The product that was requested doesn\'t exist. Verify the product and try again.'
         );
 
-        $this->createServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/web';
+        $this->createServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/media';
 
         $requestData = [
             'id' => null,
@@ -544,7 +544,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
             'The product that was requested doesn\'t exist. Verify the product and try again.'
         );
 
-        $this->updateServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/web'
+        $this->updateServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/media'
             . '/' . 'wrong-sku';
         $requestData = [
             'sku' => 'wrong_product_sku',
@@ -600,7 +600,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
             'The product that was requested doesn\'t exist. Verify the product and try again.'
         );
 
-        $this->deleteServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/web/9999';
+        $this->deleteServiceInfo['rest']['resourcePath'] = '/V1/products/wrong_product_sku/media/9999';
         $requestData = [
             'sku' => 'wrong_product_sku',
             'entryId' => 9999,
@@ -619,7 +619,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('No image with the provided ID was found. Verify the ID and try again.');
 
-        $this->deleteServiceInfo['rest']['resourcePath'] = '/V1/products/simple/web/9999';
+        $this->deleteServiceInfo['rest']['resourcePath'] = '/V1/products/simple/media/9999';
         $requestData = [
             'sku' => 'simple',
             'entryId' => 9999,
@@ -654,7 +654,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
 
         $serviceInfo = [
             'rest' => [
-                'resourcePath' => '/V1/products/' . $productSku . '/web/' . $imageId,
+                'resourcePath' => '/V1/products/' . $productSku . '/media/' . $imageId,
                 'httpMethod' => Request::HTTP_METHOD_GET,
             ],
             'soap' => [
@@ -687,7 +687,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
         $productSku = 'simple'; //from fixture
         $serviceInfo = [
             'rest' => [
-                'resourcePath' => '/V1/products/' . urlencode($productSku) . '/web',
+                'resourcePath' => '/V1/products/' . urlencode($productSku) . '/media',
                 'httpMethod' => Request::HTTP_METHOD_GET,
             ],
             'soap' => [
@@ -719,7 +719,7 @@ class ProductAttributeMediaGalleryManagementInterfaceTest extends WebapiAbstract
         $productSku = 'absent_sku_' . time();
         $serviceInfo = [
             'rest' => [
-                'resourcePath' => '/V1/products/' . urlencode($productSku) . '/web',
+                'resourcePath' => '/V1/products/' . urlencode($productSku) . '/media',
                 'httpMethod' => Request::HTTP_METHOD_GET,
             ],
             'soap' => [

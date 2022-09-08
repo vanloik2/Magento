@@ -213,7 +213,7 @@ class CategoriesFixture extends Fixture
     }
 
     /**
-     * Get next category index.phtml, which will be used as index.phtml of first-level category
+     * Get next category index, which will be used as index of first-level category
      *
      * @return int
      */

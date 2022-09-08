@@ -36,7 +36,7 @@ define([
             var encodedHtmlWithForwardSlashInImgSrc = encodedHtml.replace(/src="((?:(?!"|\\\?).)*)/, 'src="$1/');
 
             describe('"encodeDirectives" method', function () {
-                it('converts web directive img src to directive URL', function () {
+                it('converts media directive img src to directive URL', function () {
                     expect(obj.encodeDirectives(decodedHtml)).toEqual(encodedHtml);
                 });
             });
@@ -44,14 +44,14 @@ define([
             describe('"decodeDirectives" method', function () {
                 it(
                     'converts directive URL img src without a trailing forward slash ' +
-                    'to web url without a trailing forward slash',
+                    'to media url without a trailing forward slash',
                     function () {
                         expect(obj.decodeDirectives(encodedHtml)).toEqual(decodedHtml);
                     }
                 );
 
                 it('converts directive URL img src with a trailing forward slash ' +
-                    'to web url without a trailing forward slash',
+                    'to media url without a trailing forward slash',
                     function () {
                         expect(encodedHtmlWithForwardSlashInImgSrc).not.toEqual(encodedHtml);
                         expect(obj.decodeDirectives(encodedHtmlWithForwardSlashInImgSrc)).toEqual(decodedHtml);
@@ -62,7 +62,7 @@ define([
 
         describe('without SID in directive query string without secret key', function () {
             var decodedHtml = '<p>' +
-                '<img src="{{web url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
+                '<img src="{{media url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
                 encodedHtml = '<p>' +
                     '<img src="http://example.com/admin/cms/wysiwyg/directive/___directive' +
                     '/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuYW5hLmpwZyJ9fQ%2C%2C" alt="" width="612" height="459">' +
@@ -79,7 +79,7 @@ define([
 
         describe('without SID in directive query string with secret key', function () {
             var decodedHtml = '<p>' +
-                '<img src="{{web url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
+                '<img src="{{media url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
                 encodedHtml = '<p>' +
                     '<img src="http://example.com/admin/cms/wysiwyg/directive/___directive' +
                     '/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuYW5hLmpwZyJ9fQ%2C%2C/key/' +
@@ -100,7 +100,7 @@ define([
 
         describe('with SID in directive query string without secret key', function () {
             var decodedHtml = '<p>' +
-                '<img src="{{web url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
+                '<img src="{{media url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
                 encodedHtml = '<p>' +
                     '<img src="http://example.com/admin/cms/wysiwyg/directive/___directive' +
                     '/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuYW5hLmpwZyJ9fQ%2C%2C?SID=something" ' +
@@ -119,7 +119,7 @@ define([
 
         describe('with SID in directive query string with secret key', function () {
             var decodedHtml = '<p>' +
-                '<img src="{{web url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
+                '<img src="{{media url=&quot;wysiwyg/banana.jpg&quot;}}" alt="" width="612" height="459"></p>',
                 encodedHtml = '<p>' +
                     '<img src="http://example.com/admin/cms/wysiwyg/directive/___directive' +
                     '/e3ttZWRpYSB1cmw9Ind5c2l3eWcvYmFuYW5hLmpwZyJ9fQ%2C%2C/key/' +

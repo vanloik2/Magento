@@ -90,7 +90,7 @@ class ImagesTest extends TestCase
         $helper = $this->generateHelper(false, 0);
         $actualResult = $helper->getImageHtmlDeclaration('wysiwyg/hello.png', true);
 
-        $this->assertEquals('<img src="{{web url=&quot;wysiwyg/hello.png&quot;}}" alt="" />', $actualResult);
+        $this->assertEquals('<img src="{{media url=&quot;wysiwyg/hello.png&quot;}}" alt="" />', $actualResult);
     }
 
     /**
@@ -101,7 +101,7 @@ class ImagesTest extends TestCase
     public function providerGetImageHtmlDeclaration()
     {
         return [
-            [true, 'wysiwyg/hello.png', true, '<img src="http://example.com/web/wysiwyg/hello.png" alt="" />'],
+            [true, 'wysiwyg/hello.png', true, '<img src="http://example.com/media/wysiwyg/hello.png" alt="" />'],
             [
                 false,
                 'wysiwyg/hello.png',
@@ -116,7 +116,7 @@ class ImagesTest extends TestCase
                 },
             ],
             [true, 'wysiwyg/hello.png', false, 'http://example.com/media/wysiwyg/hello.png'],
-            [false, 'wysiwyg/hello.png', true, '<img src="{{web url=&quot;wysiwyg/hello.png&quot;}}" alt="" />'],
+            [false, 'wysiwyg/hello.png', true, '<img src="{{media url=&quot;wysiwyg/hello.png&quot;}}" alt="" />'],
         ];
     }
 

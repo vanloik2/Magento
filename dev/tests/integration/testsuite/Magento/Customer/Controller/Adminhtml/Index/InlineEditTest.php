@@ -189,7 +189,7 @@ class InlineEditTest extends AbstractBackendController
     private function performInlineEditRequest(array $params): array
     {
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('backend/customer/index.phtml/inlineEdit');
+        $this->dispatch('backend/customer/index/inlineEdit');
 
         return $this->json->unserialize($this->getResponse()->getBody());
     }

@@ -216,7 +216,7 @@ class PriceTest extends TestCase
     }
 
     /**
-     * Asserts price data in index.phtml table.
+     * Asserts price data in index table.
      *
      * @param string $sku
      * @param array $expectedPrices

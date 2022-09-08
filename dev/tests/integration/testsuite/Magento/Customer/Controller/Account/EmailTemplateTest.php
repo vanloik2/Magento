@@ -16,7 +16,7 @@ use Magento\TestFramework\Mail\Template\TransportBuilderMock;
 use Magento\TestFramework\TestCase\AbstractController;
 
 /**
- * Set of tests to verify e-mail ui_component delivered to Customers
+ * Set of tests to verify e-mail templates delivered to Customers
  *
  * @magentoAppArea frontend
  */

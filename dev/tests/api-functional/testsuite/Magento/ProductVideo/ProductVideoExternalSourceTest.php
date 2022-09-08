@@ -90,7 +90,7 @@ class ProductVideoExternalSourceTest extends WebapiAbstract
     }
 
     /**
-     * Test create/ update product with external video web gallery entry
+     * Test create/ update product with external video media gallery entry
      *
      * @dataProvider externalVideoDataProvider
      * @param array $mediaGalleryData

@@ -16,7 +16,7 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('lib/internal/Credis')
     ->exclude('lib/internal/Less')
     ->exclude('lib/internal/LinLibertineFont')
-    ->exclude('pub/web')
+    ->exclude('pub/media')
     ->exclude('pub/static')
     ->exclude('setup/vendor')
     ->exclude('var');

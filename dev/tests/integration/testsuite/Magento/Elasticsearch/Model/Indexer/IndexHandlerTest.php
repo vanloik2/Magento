@@ -22,7 +22,7 @@ use Magento\TestModuleCatalogSearch\Model\ElasticsearchVersionChecker;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Important: Please make sure that each integration test file works with unique elastic search index.phtml. In order to
+ * Important: Please make sure that each integration test file works with unique elastic search index. In order to
  * achieve this, use @magentoConfigFixture to pass unique value for 'elasticsearch_index_prefix' for every test
  * method. E.g. '@magentoConfigFixture current_store catalog/search/elasticsearch_index_prefix indexerhandlertest'
  *
@@ -262,7 +262,7 @@ class IndexHandlerTest extends TestCase
     {
         $index = $this->searchIndexNameResolver->getIndexName($storeId, $this->indexer->getId());
         $searchQuery = [
-            'index.phtml' => $index,
+            'index' => $index,
             'type' => $this->entityType,
             'body' => [
                 'query' => [
@@ -296,7 +296,7 @@ class IndexHandlerTest extends TestCase
     {
         $index = $this->searchIndexNameResolver->getIndexName($storeId, $this->indexer->getId());
         $searchQuery = [
-            'index.phtml' => $index,
+            'index' => $index,
             'type' => $this->entityType,
             'body' => [
                 'query' => [

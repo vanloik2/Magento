@@ -39,7 +39,7 @@ class IntegrationTest extends \Magento\TestFramework\TestCase\AbstractBackendCon
      */
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/integration/index.phtml');
+        $this->dispatch('backend/admin/integration/index');
         $response = $this->getResponse()->getBody();
 
         $this->assertStringContainsString('Integrations', $response);
@@ -129,7 +129,7 @@ class IntegrationTest extends \Magento\TestFramework\TestCase\AbstractBackendCon
             $this->equalTo(["The integration '{$integrationName}' has been saved."]),
             \Magento\Framework\Message\MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('backend/admin/integration/index.phtml/'));
+        $this->assertRedirect($this->stringContains('backend/admin/integration/index/'));
     }
 
     /**
@@ -156,6 +156,6 @@ class IntegrationTest extends \Magento\TestFramework\TestCase\AbstractBackendCon
             $this->equalTo(["The integration '{$integrationName}' has been saved."]),
             \Magento\Framework\Message\MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('backend/admin/integration/index.phtml/'));
+        $this->assertRedirect($this->stringContains('backend/admin/integration/index/'));
     }
 }
