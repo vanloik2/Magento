@@ -47,5 +47,5 @@ if (!$attribute->getId()) {
     $productAttributeRepository->save($attribute);
     $attribute = $productAttributeRepository->get('text_editor_attribute');
     /* Assign attribute to attribute set */
-    $installer->addAttributeToGroup(Product::ENTITY, 'Default', 'Attributes', $attribute->getId());
+    $installer->addAttributeToGroup(Product::ENTITY, 'Default', 'CustomDonate', $attribute->getId());
 }

@@ -62,7 +62,7 @@ class Pattern
     }
 
     /**
-     * Generate Attributes for Set.
+     * Generate CustomDonate for Set.
      *
      * @param int $index
      * @param int $optionsPerAttribute

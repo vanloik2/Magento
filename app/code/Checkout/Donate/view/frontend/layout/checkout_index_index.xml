@@ -7,6 +7,7 @@
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
                             <item name="children" xsi:type="array">
+                                <!--Start add input amount donate-->
                                 <item name="steps" xsi:type="array">
                                     <item name="children" xsi:type="array">
                                         <item name="shipping-step" xsi:type="array">
@@ -17,18 +18,43 @@
                                                             <item name="component" xsi:type="string">uiComponent</item>
                                                             <item name="displayArea" xsi:type="string">shippingAdditional</item>
                                                             <item name="children" xsi:type="array">
-                                                                <item name="custom-form-donate-container" xsi:type="array">
+                                                                <item name="custom-checkout-form-container" xsi:type="array">
                                                                     <!-- Add this item to configure your js file  -->
-                                                                    <item name="component" xsi:type="string">Checkout_Donate/js/view/custom-form-donate</item>
+                                                                    <item name="component" xsi:type="string">
+                                                                        Checkout_Donate/js/view/custom-form-donate
+                                                                    </item>
                                                                     <item name="provider" xsi:type="string">checkoutProvider</item>
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- And this to add your html template  -->
-                                                                        <item name="template" xsi:type="string">
-                                                                            <Checkou></Checkou>t_Donate/custom-form-donate
-                                                                        </item>
+                                                                        <item name="template" xsi:type="string">Checkout_Donate/form-donate</item>
                                                                     </item>
-                                                                        <item name="children" xsi:type="array">
+                                                                    <item name="children" xsi:type="array">
                                                                         <!-- Here we will add the form fields  -->
+                                                                        <item name="custom-donate" xsi:type="array">
+                                                                            <!-- uiComponent is used as a wrapper for form fields (its template will render all children as a list) -->
+                                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                                            <!-- the following display area is used in template (see below) -->
+                                                                            <item name="displayArea" xsi:type="string">custom-checkout-form-fields</item>
+                                                                            <item name="children" xsi:type="array">
+                                                                                <item name="custom-donate-field" xsi:type="array">
+                                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                                    <item name="config" xsi:type="array">
+                                                                                        <!-- customScope is used to group elements within a single form (e.g. they can be validated separately) -->
+                                                                                        <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                                    </item>
+                                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                                    <item name="dataScope" xsi:type="string">shippingAddress.custom_donate</item>
+                                                                                    <item name="label" xsi:type="string" translate="true">Amount Donate</item>
+                                                                                    <item name="sortOrder" xsi:type="string">1</item>
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="validate-number" xsi:type="boolean">true</item>
+                                                                                        <item name="validate-number-range" xsi:type="string">0-999999999</item>
+                                                                                    </item>
+                                                                                </item>
+                                                                            </item>
+                                                                        </item>
                                                                     </item>
                                                                 </item>
                                                             </item>
@@ -39,6 +65,44 @@
                                         </item>
                                     </item>
                                 </item>
+                                <!-- End add input-->
+                                <!--Start edit order summary-->
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <!--  Start of the main content that needs to be added-->
+                                                        <item name="custom_donate" xsi:type="array">
+                                                            <!-- The path to our js file-->
+                                                            <item name="component" xsi:type="string">Checkout_Donate/js/view/checkout/summary/custom-donate</item>
+                                                            <item name="sortOrder" xsi:type="string">20</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Checkout_Donate/checkout/summary/customDonate</item>
+                                                                <!--  Show custom discount on order summary-->
+                                                                <item name="title" xsi:type="string" translate="true">Custom Donate</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="cart_items" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="details" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="subtotal" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Tax/js/view/checkout/summary/item/details/subtotal</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <!--  End-->
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <!--End Edit order summary-->
                             </item>
                         </item>
                     </item>
@@ -47,4 +111,3 @@
         </referenceBlock>
     </body>
 </page>
-

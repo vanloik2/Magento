@@ -6,7 +6,7 @@ class SaveCustomFieldsInOrder implements \Magento\Framework\Event\ObserverInterf
     public function execute(\Magento\Framework\Event\Observer $observer) {
         $order = $observer->getEvent()->getOrder();
         $quote = $observer->getEvent()->getQuote();
-        // Thêm data vào cột custom_donate trong bảng sales_order
+        // add data to column custom_donate in table sales_order
         $order->setData('custom_donate', $quote->getCustomDonate());
 
         return $this;

@@ -9,12 +9,5 @@ define([
             // component initialization logic
             return this;
         },
-
-        /**
-         * Form submit handler
-         *
-         * This method can have any name.
-         */
-
     });
 });

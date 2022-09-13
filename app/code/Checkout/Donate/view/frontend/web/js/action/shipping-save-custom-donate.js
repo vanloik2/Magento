@@ -33,7 +33,7 @@ define(
                     selectBillingAddressAction(quote.shippingAddress());
                 }
 
-                var customDonate = $('[name="custom_attributes[custom_donate]"]').val();
+                //add custom_donate to addressInformation
 
                 payload = {
                     addressInformation: {
@@ -42,7 +42,7 @@ define(
                         shipping_method_code: quote.shippingMethod().method_code,
                         shipping_carrier_code: quote.shippingMethod().carrier_code,
                         extension_attributes:{
-                            custom_donate: customDonate
+                            custom_donate: $('[name="custom_donate"]').val()
                         }
                     }
                 };

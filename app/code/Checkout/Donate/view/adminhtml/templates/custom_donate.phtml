@@ -1,5 +1,8 @@
+
+<!--// Get order by function getOrder in Block/Adminhtml/CustomDonate.php-->
 <?php $order = $this->getOrder(); ?>
 <?php if ($order) : ?>
+    <!--    Show option Donate Checkout trong in order admin  -->
     <section class="admin__page-section order-additional-information">
         <div class="admin__page-section-title">
             <strong class="title"><?php echo /* @escapeNotVerified */ __('Donate Checkout'); ?></strong>
@@ -11,7 +14,7 @@
                     <table class="admin__table-secondary order-information-table">
                         <tr>
                             <th>Amount Donate</th>
-                            <td><?php echo '$'.$order['custom_donate']; ?></td>
+                            <td><?php echo '$ '. number_format($order['custom_donate'], 2, ',', '.'); ?></td>
                         </tr>
                     </table>
                 </div>

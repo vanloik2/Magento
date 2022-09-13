@@ -184,7 +184,7 @@ class EavTest extends AbstractEavTest
         $this->assertArrayNotHasKey('design', $actualMeta, 'Group "Design" still visible.');
         $this->assertEmpty(
             array_intersect($designAttributes, $this->getUsedAttributes($actualMeta)),
-            'Attributes from "Design" group still visible.'
+            'CustomDonate from "Design" group still visible.'
         );
     }
 

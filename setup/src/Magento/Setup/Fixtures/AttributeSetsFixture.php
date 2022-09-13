@@ -7,7 +7,7 @@
 namespace Magento\Setup\Fixtures;
 
 /**
- * Fixture for Attribute Sets and Attributes based on the configuration
+ * Fixture for Attribute Sets and CustomDonate based on the configuration
  *
  * Support the following format:
  * <!-- Number of product attribute sets -->

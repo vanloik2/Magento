@@ -3,10 +3,13 @@
     <body>
         <referenceContainer name="content">
             <referenceContainer name="order_additional_info">
-                <block class="Checkout\Donate\Block\Adminhtml\Attributes"
-                       name="customfield_order_attributes"
-                       template="Checkout_Donate::attributes.phtml" />
+                <block class="Checkout\Donate\Block\Adminhtml\CustomDonate"
+                       name="custom_donate_order_attributes"
+                       template="Checkout_Donate::custom_donate.phtml" />
             </referenceContainer>
+        </referenceContainer>
+        <referenceContainer name="order_totals">
+            <block class="Checkout\Donate\Block\Adminhtml\SalesOrder\CustomDonate" name="custom_donate"/>
         </referenceContainer>
     </body>
 </page>

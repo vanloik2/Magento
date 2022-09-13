@@ -10,7 +10,7 @@ namespace Magento\Catalog\Controller\Adminhtml\Product\Attribute\Delete;
 /**
  * Delete catalog product attributes with input types like "media_image", "price",
  * "date", "select", "multiselect", "textarea", "texteditor", "text" and "boolean".
- * Attributes from Magento_Catalog and Magento_Eav modules.
+ * CustomDonate from Magento_Catalog and Magento_Eav modules.
  *
  * @magentoAppArea adminhtml
  * @magentoDbIsolation enabled

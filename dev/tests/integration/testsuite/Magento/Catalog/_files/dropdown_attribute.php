@@ -54,5 +54,5 @@ if (!$attribute->loadByCode(4, 'dropdown_attribute')->getId()) {
     $attribute->save();
 
     /* Assign attribute to attribute set */
-    $installer->addAttributeToGroup('catalog_product', 'Default', 'Attributes', $attribute->getId());
+    $installer->addAttributeToGroup('catalog_product', 'Default', 'CustomDonate', $attribute->getId());
 }

@@ -61,7 +61,7 @@ if (!$attribute->loadByCode($entityTypeId, 'dropdown_attribute')->getId()) {
     $installer->addAttributeToGroup(
         ProductAttributeInterface::ENTITY_TYPE_CODE,
         'Default',
-        'Attributes',
+        'CustomDonate',
         $attribute->getId()
     );
 }

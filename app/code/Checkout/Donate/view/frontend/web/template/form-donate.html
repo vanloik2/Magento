@@ -1,0 +1,30 @@
+
+<li>
+    <div>
+    <div class="step-title"
+         translate="'Donate Checkout'"
+         data-role="title"></div>
+    <form id="custom-checkout-form" class="form form-custom-donate" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <fieldset class="fieldset">
+            <!--            <legend data-bind="i18n: 'Custom Checkout Form'"></legend>-->
+            <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </fieldset>
+    </form>
+    </div>
+</li>
+<style>
+    .step-title{
+        margin-bottom: 10px;
+    }
+    .form-custom-donate label{
+        font-weight: normal !important;
+        margin-top: 15px !important;
+    }
+    .form-custom-donate input{
+        width: 500px;
+    }
+</style>
+
+

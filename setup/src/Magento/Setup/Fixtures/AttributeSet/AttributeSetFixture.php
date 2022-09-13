@@ -9,7 +9,7 @@ namespace Magento\Setup\Fixtures\AttributeSet;
 use Magento\Catalog\Api\Data\ProductAttributeInterface;
 
 /**
- * Persitor for Attribute Sets and Attributes based on the configuration.
+ * Persitor for Attribute Sets and CustomDonate based on the configuration.
  */
 class AttributeSetFixture
 {

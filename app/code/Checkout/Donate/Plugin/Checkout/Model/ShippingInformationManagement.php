@@ -1,6 +1,5 @@
 <?php
 namespace Checkout\Donate\Plugin\Checkout\Model;
-
 use Magento\Quote\Model\QuoteRepository;
 
 class ShippingInformationManagement
@@ -23,8 +22,15 @@ class ShippingInformationManagement
         }
 
         $quote = $this->quoteRepository->getActive($cartId);
-        // Thêm data vào cột custom_donate trong bảng quote
-        $quote->setCustomDonate($extAttributes->getCustomDonate());
+        // Add custom donate to table quote
+        $ctDonate = $extAttributes->getCustomDonate();
+        //Check value if $ctDonate < 0 -> $ctDonate = 0
+
+        if($ctDonate < 0){
+            $quote->setCustomDonate(0);
+        }else{
+            $quote->setCustomDonate($extAttributes->getCustomDonate());
+        }
     }
 }
 

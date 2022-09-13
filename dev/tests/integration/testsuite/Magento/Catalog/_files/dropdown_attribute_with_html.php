@@ -63,7 +63,7 @@ if (!$attribute->loadByCode($entityTypeId, 'dropdown_attribute_with_html')->getI
     $installer->addAttributeToGroup(
         $entityTypeId,
         'Default',
-        'Attributes',
+        'CustomDonate',
         $attribute->getId()
     );
 }
