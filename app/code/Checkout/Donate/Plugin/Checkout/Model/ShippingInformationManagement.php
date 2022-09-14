@@ -23,13 +23,13 @@ class ShippingInformationManagement
 
         $quote = $this->quoteRepository->getActive($cartId);
         // Add custom donate to table quote
-        $ctDonate = $extAttributes->getCustomDonate();
+        $vlDonate = $extAttributes->getCustomDonate();
         //Check value if $ctDonate < 0 -> $ctDonate = 0
 
-        if($ctDonate < 0){
+        if($vlDonate < 0){
             $quote->setCustomDonate(0);
         }else{
-            $quote->setCustomDonate($extAttributes->getCustomDonate());
+            $quote->setCustomDonate($vlDonate);
         }
     }
 }

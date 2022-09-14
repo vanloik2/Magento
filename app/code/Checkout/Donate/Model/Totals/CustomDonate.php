@@ -19,7 +19,7 @@ class CustomDonate extends AbstractTotal
         $this->quoteValidator = $quoteValidator;
     }
 
-    // Hàm tính toán giá trị custom donate-validator.js
+    // add value of custom donate to totals
     public function collect(
         Quote $quote,
         ShippingAssignmentInterface $shippingAssignment,
@@ -27,15 +27,14 @@ class CustomDonate extends AbstractTotal
     ){
         parent::collect($quote, $shippingAssignment, $total);
 
-        $customDonate = $quote['custom_donate'];
-        $balance = $customDonate ;
+        $balance = $quote['custom_donate'] ;
         $total->setTotalAmount($this->getCode(), $balance);
         $total->setBaseTotalAmount($this->getCode(), $balance);
 
         return $this;
     }
 
-    // Hàm lấy ra giá trị và return về mảng ...
+    // get value use for templates
     public function fetch(Quote $quote, Total $total)
     {
         return [
