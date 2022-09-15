@@ -27,5 +27,8 @@
             "EXPERT_REVIEW_EXPERT_ID_EXPERT_ID": true,
             "EXPERT_REVIEW_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID": true
         }
-    }
+    },
+  "di": {
+    "column": {}
+  }
 }

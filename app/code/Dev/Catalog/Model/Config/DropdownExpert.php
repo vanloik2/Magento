@@ -23,9 +23,9 @@ class DropdownExpert implements ArrayInterface
         $expert = $this->expertFactory->create()->getCollection()->getData();
 
         if(empty($expert)){
-            $expert = [];
+            $option = [];
         }else{
-            foreach ($expert as $index => $value){
+            foreach ($expert as $value){
                 $option[] = ['value' => (int)$value['id'], 'label' => $value['name']];
             };
         }

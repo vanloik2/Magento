@@ -1,5 +1,5 @@
 <!-- ko -->
-Show custom donate summary
+<!--Show custom donate summary-->
 <tr class="totals fee excl">
     <th class="mark" scope="row">
  <span class="label" data-bind="text: title">
@@ -8,8 +8,11 @@ Show custom donate summary
 </span>
     </th>
     <td class="amount">
- <span class="price" data-bind="text: getValue(), attr: {'data-th': title}">
-</span>
+ <span class="price" data-bind="text: getValue(), attr: {'data-th': title}"></span>
+        <span onclick="function removeValue(event) {
+
+        }
+        removeValue()">X</span>
     </td>
 </tr>
 <!-- /ko -->

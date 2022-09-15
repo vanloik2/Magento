@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var $block DonateField
+ */
+use Checkout\Donate\Block\Adminhtml\Order\View\DonateField;
+
+$data = $block->getValueDonate();
+?>
+<section class="admin__page-section order-view-account-information">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Block Checkout Donate')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information">
+            <?php /* Order Information */ ?>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary order-information-table">
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Amount Donate')) ?></th>
+                        <td>$ <?= number_format($data, 2, '.', ) ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</section>

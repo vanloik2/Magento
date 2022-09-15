@@ -14,4 +14,16 @@
             </argument>
         </arguments>
     </virtualType>
+    <type name="Dev\Catalog\Model\Upload\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">review/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">review/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

@@ -39,10 +39,11 @@ class InlineEdit extends \Magento\Backend\App\Action implements HttpPostActionIn
 
        foreach (array_keys($postItems) as $expertId) {
            try{
-               $banner = $this->expertFactory->create();
-               $banner->load($expertId);
-               $banner->setData($postItems[$expertId]);
-               $banner->save();
+               $expert = $this->expertFactory->create();
+               $expert->load($expertId);
+               $expert->setData($postItems[$expertId]);
+               $expert['updated_at'] = date('Y-m-d H:i:s');
+               $expert->save();
            }
            catch(\Exception $e){
                $messages[] = __('Error while saving expert');

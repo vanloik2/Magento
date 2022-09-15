@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var ExReviewTab $block;
+ */
+
+use Dev\Catalog\Block\Product\ExReviewTab;
+
+$data = $block->getDataExpertTab();
+
+?>
+
+<?php if (!empty($data)): ?>
+    <h2 class="h2-title"> <?= $data['review_title'] ?> </h2>
+    <div class="row">
+        <div class="col">
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th><?= $data['product_name'] ?></th>
+                </tr>
+                <tr>
+                    <th>Expert Name</th>
+                    <td class="table-expert">
+                        <?php foreach ($data['expert_name'] as $item): ?>
+                        <p class="cl-name"><?= $item ?></p>
+                        <?php endforeach; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Details</th>
+                    <td><?= $data['review_detail'] ?></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col" style="text-align: center">
+            <img src="http://magento.conf/media/catalog/product/cache/a.png" />
+        </div>
+    </div>
+<?php endif; ?>
+
+

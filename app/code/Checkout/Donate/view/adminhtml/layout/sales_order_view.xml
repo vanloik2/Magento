@@ -4,5 +4,9 @@
         <referenceContainer name="order_totals">
             <block class="Checkout\Donate\Block\Adminhtml\SalesOrder\CustomDonate" name="custom_donate"/>
         </referenceContainer>
+        <referenceBlock name="order_additional_info">
+            <block class="Checkout\Donate\Block\Adminhtml\Order\View\DonateField" name="sales_custom_view"
+                   template="Checkout_Donate::order/view/donate-field.phtml"/>
+        </referenceBlock>
     </body>
 </page>

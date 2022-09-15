@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Dev_Catalog::css/style.css" />
+    </head>
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Dev\Catalog\Block\Product\ExReviewTab" name="expert-review.tab" template="Dev_Catalog::product/expert_review_tab.phtml" group="detailed_info" >
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Expert Review</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

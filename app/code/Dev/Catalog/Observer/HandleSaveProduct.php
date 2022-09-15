@@ -42,6 +42,7 @@ class HandleSaveProduct implements ObserverInterface
         }else{
             $model['product_id'] = $params['id'];
         }
+        $model['expert_list'] = json_encode($customFieldData['expert_list']);
 
         $model->save();
     }

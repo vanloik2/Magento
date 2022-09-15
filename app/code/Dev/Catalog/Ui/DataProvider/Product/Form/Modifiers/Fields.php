@@ -18,26 +18,30 @@ class Fields extends AbstractModifier
         $this->locator = $locator;
         $this->expertRv = $expertRv;
     }
-    public function modifyData(array $data)
+    public function modifyData(array $data): array
     {
         $product   = $this->locator->getProduct();
 
         $productId = $product->getId();
         // Lọc bản ghi trong expert review xem có bản ghi có product_id nào hợp lệ tồn tại k ?
-        $exRv = $this->expertRv->create()->getCollection()->addFieldToFilter('product_id', $productId)->getFirstItem()->getData();
+        $epReview = $this->expertRv->create()->getCollection()->addFieldToFilter('product_id', $productId)->getFirstItem()->getData();
 
-        $data = array_replace_recursive(
+        if(!empty($epReview)){
+            $epReview['expert_list'] = json_decode($epReview['expert_list']);
+        }else{
+            $epReview = [];
+        }
+
+        return array_replace_recursive(
 
             $data, [
             $productId => [
-                'expert_review' => $exRv
+                'expert_review' => $epReview
             ]
         ]);
-
-        return $data;
     }
 
-    public function modifyMeta(array $meta)
+    public function modifyMeta(array $meta): array
     {
         // Disable Expert Review trong form
 

@@ -9,30 +9,26 @@
                 <item name="sortOrder" xsi:type="number">1</item>
             </item>
         </argument>
-        <field name="expert_name">
+        <field name="expert_list">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Dev\Catalog\Model\Config\DropdownExpert</item>
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Expert Name</item>
-                    <item name="componentType" xsi:type="string">field</item>
-                    <item name="formElement" xsi:type="string">select</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
-                    <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
-                    <item name="dataScope" xsi:type="string">expert_id</item>
-                    <item name="filterOptions" xsi:type="boolean">true</item>
-                    <item name="showCheckbox" xsi:type="boolean">true</item>
-                    <item name="chipsEnabled" xsi:type="boolean">true</item>
-                    <item name="disableLabel" xsi:type="boolean">true</item>
-                    <item name="multiple" xsi:type="boolean">false</item>
-                    <item name="sortOrder" xsi:type="number">10</item>
-                    <item name="listens" xsi:type="array">
-                        <item name="newOption" xsi:type="string">toggleOptionSelected</item>
-                    </item>
+                    <item name="dataType" xsi:type="string">text</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
-                    <item name="required" xsi:type="boolean">true</item>
-                    <item name="source" xsi:type="string">conditions</item>
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="chipsEnabled" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string">Expert Name</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Magento_Catalog/js/components/new-category</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="levelsVisibility" xsi:type="number">1</item>
+                    <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                    <item name="config" xsi:type="array">
+                        <item name="dataScope" xsi:type="string">expert_list</item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
                 </item>
             </argument>
         </field>
@@ -79,41 +75,23 @@
                 </wysiwyg>
             </formElements>
         </field>
-        <htmlContent name="gallery" sortOrder="200">
+        <field name="image_review">
             <argument name="data" xsi:type="array">
-                <item name="wrapper" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Images And Videos</item>
-                    <item name="collapsible" xsi:type="boolean">true</item>
-                    <item name="opened" xsi:type="boolean">false</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">Label </item>
+                    <item name="label" xsi:type="string" translate="true">Image Review</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Dev_Catalog/image-preview</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">100</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="router_name/index/upload"/>
+                    </item>
                 </item>
             </argument>
-            <settings>
-                <wrapper>
-                    <canShow>true</canShow>
-                    <componentType>fieldset</componentType>
-                </wrapper>
-            </settings>
-            <block name="gallery_ex" class="Dev\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery">
-                <arguments>
-                    <argument name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Images And Videos</item>
-                        <item name="collapsible" xsi:type="boolean">true</item>
-                        <item name="opened" xsi:type="boolean">false</item>
-                        <item name="sortOrder" xsi:type="string">22</item>
-                        <item name="canShow" xsi:type="boolean">true</item>
-                        <item name="componentType" xsi:type="string">fieldset</item>
-                    </argument>
-                </arguments>
-                <block class="Dev\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" as="content">
-                    <arguments>
-                        <argument name="config" xsi:type="array">
-                            <item name="parentComponent" xsi:type="string">product_form.product_form.block_gallery.block_gallery</item>
-                        </argument>
-                    </arguments>
-                    <block class="Dev\Catalog\Block\Adminhtml\Product\Edit\NewVideo" name="new-video" template="Magento_ProductVideo::product/edit/slideout/form.phtml"/>
-                </block>
-            </block>
-        </htmlContent>
+        </field>
     </fieldset>
-
 </form>

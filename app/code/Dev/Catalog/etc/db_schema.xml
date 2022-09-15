@@ -18,7 +18,7 @@
 
     <table name="expert_review" resource="default" engine="innodb" comment="Review Product Table">
         <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment= "ID"/>
-        <column xsi:type="int" name="expert_id" unsigned="false" nullable="false"  comment= "Expert Id"/>
+        <column xsi:type="varchar" name="expert_list"  nullable="false"  comment= "Expert Id"/>
         <column xsi:type="int" name="product_id" unsigned="true" nullable="false" comment= "Product Id"/>
         <column xsi:type="varchar" name="review_title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="varchar" name="review_detail" nullable="false" length="500" comment="Detail"/>
@@ -27,9 +27,6 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
-        <constraint xsi:type="foreign" referenceId="FR_EXPERT" table="expert_review"
-           column="expert_id" referenceTable="expert" referenceColumn="id"
-           onDelete="CASCADE"/>
     </table>
 </schema>
 

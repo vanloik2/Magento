@@ -28,8 +28,8 @@ class CustomDonate extends AbstractTotal
         parent::collect($quote, $shippingAssignment, $total);
 
         $balance = $quote['custom_donate'] ;
-        $total->setTotalAmount($this->getCode(), $balance);
-        $total->setBaseTotalAmount($this->getCode(), $balance);
+            $total->setTotalAmount($this->getCode(), $balance);
+            $total->setBaseTotalAmount($this->getCode(), $balance);
 
         return $this;
     }

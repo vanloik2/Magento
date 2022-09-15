@@ -42,7 +42,7 @@ define(
                         shipping_method_code: quote.shippingMethod().method_code,
                         shipping_carrier_code: quote.shippingMethod().carrier_code,
                         extension_attributes:{
-                            custom_donate: $('[name="custom_donate"]').val()
+                            custom_donate : $('[name="custom_donate"]').val(),
                         }
                     }
                 };
