@@ -4,7 +4,11 @@ use Magento\Quote\Model\QuoteRepository;
 
 class ShippingInformationManagement
 {
-    protected $quoteRepository;
+
+    /**
+     * @var QuoteRepository
+     */
+    private $quoteRepository;
 
     public function __construct(QuoteRepository $quoteRepository) {
         $this->quoteRepository = $quoteRepository;
@@ -32,5 +36,6 @@ class ShippingInformationManagement
             $quote->setCustomDonate($vlDonate);
         }
     }
+
 }
 

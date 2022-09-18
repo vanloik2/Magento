@@ -24,7 +24,8 @@ class CustomDonate extends AbstractTotal
         Quote $quote,
         ShippingAssignmentInterface $shippingAssignment,
         Total $total
-    ){
+    )
+    {
         parent::collect($quote, $shippingAssignment, $total);
 
         $balance = $quote['custom_donate'] ;
@@ -35,12 +36,13 @@ class CustomDonate extends AbstractTotal
     }
 
     // get value use for templates
-    public function fetch(Quote $quote, Total $total)
+    public function fetch(Quote $quote, Total $total): array
     {
-        return [
+        return[
             'code'=> $this->getCode(),
             'title'=>'Custom Donate',
-            'value'=> $quote['custom_donate']
+            'value'=> $quote['custom_donate'],
+            'quote_id' => $this->getQuoteId($quote)
         ];
     }
 
@@ -48,4 +50,10 @@ class CustomDonate extends AbstractTotal
     {
         return __('Custom Donate');
     }
+
+    private function getQuoteId(Quote $quote)
+    {
+        return $quote->getEntityId();
+    }
+
 }

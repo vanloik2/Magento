@@ -27,15 +27,17 @@ class CustomDonate extends Template
     {
         $parent = $this->getParentBlock();
         $this->_order = $parent->getOrder();
-        $customDonate = new \Magento\Framework\DataObject(
-            [
-                'code'=> 'custom_donate',
-                'strong'=>false,
-                'value'=>$parent->getOrder()->getData()['custom_donate'],
-                'label'=>__('Custom Donate'),
-            ]
-        );
-        $parent->addTotal($customDonate, 'custom_donate');
-        return $this;
+        if($parent->getOrder()->getData()['custom_donate'] > 0 ) {
+            $customDonate = new \Magento\Framework\DataObject(
+                [
+                    'code' => 'custom_donate',
+                    'strong' => false,
+                    'value' => $parent->getOrder()->getData()['custom_donate'],
+                    'label' => __('Custom Donate'),
+                ]
+            );
+            $parent->addTotal($customDonate, 'custom_donate');
+        }
+            return $this;
     }
 }

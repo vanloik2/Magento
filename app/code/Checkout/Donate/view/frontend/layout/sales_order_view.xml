@@ -3,7 +3,7 @@
     <body>
 <!--        Layout show custom donate in order totals my order-->
         <referenceContainer name="order_totals">
-            <block class="Checkout\Donate\Block\SalesOrder\CustomDonate" name="custom_donate"/>
+            <block class="Checkout\Donate\Block\Adminhtml\SalesOrder\CustomDonate" name="custom_donate"/>
         </referenceContainer>
     </body>
 </page>

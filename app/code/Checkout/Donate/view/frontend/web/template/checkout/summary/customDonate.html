@@ -8,11 +8,23 @@
 </span>
     </th>
     <td class="amount">
- <span class="price" data-bind="text: getValue(), attr: {'data-th': title}"></span>
-        <span onclick="function removeValue(event) {
-
-        }
-        removeValue()">X</span>
+    <span class="price" id="price" data-bind="text: getValue(), attr: {'data-th': title}"></span>
+        <span id="removeBtn" data-bind="i18n: 'X', click: removeCustomDonate"></span>
     </td>
 </tr>
 <!-- /ko -->
+<style>
+
+    #removeBtn{
+        text-decoration: none;
+        cursor: pointer;
+        color: blue;
+    }
+    #removeBtn:hover {
+        color: red;
+    }
+    .quote-id{
+        display: none;
+    }
+</style>
+
