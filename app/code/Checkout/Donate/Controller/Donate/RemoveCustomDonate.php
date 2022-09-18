@@ -27,7 +27,6 @@ class RemoveCustomDonate  extends Action
         parent::__construct($context);
     }
 
-
     /**
      * @throws NoSuchEntityException
      */

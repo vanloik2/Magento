@@ -38,6 +38,13 @@ define(
                 }
                 return priceUtils.formatPrice(price, quote.getBasePriceFormat());
             },
+            btnRemove: function (){
+              var value = 'X';
+              if(totals.getSegment('custom_donate').value == 0){
+                  value = ''
+              }
+              return value;
+            },
             getParamUrl: function (){
                 var configValues = window.checkoutConfig;
                 return configValues.quoteItemData[0]['quote_id'];
@@ -53,10 +60,6 @@ define(
                         var deferred = $.Deferred();
                         getTotalsAction([], deferred);
                     },
-                    error: function (xhr, status, error) {
-                        var err = eval("(" + xhr.responseText + ")");
-                        console.log(err.Message);
-                    }
                 });
             }
         });
