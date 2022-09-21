@@ -11,7 +11,7 @@ use Magento\Catalog\Controller\Adminhtml\Product\Attribute\Delete\AbstractDelete
 
 /**
  * Delete catalog product attributes with input types like "weee".
- * CustomDonate from Magento_Weee module.
+ * Attributes from Magento_Weee module.
  *
  * @magentoAppArea adminhtml
  * @magentoDbIsolation enabled

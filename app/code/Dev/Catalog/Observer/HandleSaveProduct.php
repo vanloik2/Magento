@@ -27,7 +27,7 @@ class HandleSaveProduct implements ObserverInterface
     public function execute(Observer $observer)
     {
         $params = $this->request->getParams();
-        dd($params);
+
         $customFieldData = $params['expert_review'];
 
         $model = $this->expertReviewFactory->create();

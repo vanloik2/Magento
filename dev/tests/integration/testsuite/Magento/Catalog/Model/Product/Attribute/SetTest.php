@@ -191,7 +191,7 @@ class SetTest extends \PHPUnit\Framework\TestCase
         $designAttributeCodes = ['page_layout', 'options_container', 'custom_layout_update'];
         $this->assertNotEmpty(
             array_intersect($designAttributeCodes, $unusedSetAttributes),
-            'CustomDonate from "Design" group still assigned to attribute set.'
+            'Attributes from "Design" group still assigned to attribute set.'
         );
     }
 

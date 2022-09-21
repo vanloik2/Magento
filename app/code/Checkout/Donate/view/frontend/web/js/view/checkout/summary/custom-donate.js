@@ -45,14 +45,17 @@ define(
               }
               return value;
             },
-            getParamUrl: function (){
-                var configValues = window.checkoutConfig;
-                return configValues.quoteItemData[0]['quote_id'];
-            },
+            // -- use configProvider get quoteId --
+            // getParamUrl: function (){
+            //     var configValues = window.checkoutConfig;
+            //     return configValues.quoteItemData[0]['quote_id'];
+            // },
+            // + '/id/' + this.getParamUrl()
+            // Handle remove CustomDonate
             removeCustomDonate: function () {
                 var url = urlBuilder.build(URL_CONTROLLER_HANDLE)
                 $.ajax({
-                    url: url + '/id/' + this.getParamUrl(),
+                    url: url,
                     type: 'POST',
                     data: {},
                     showLoader: true,

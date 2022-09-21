@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">product_content_form.product_content_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Page Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Product\Content\Block\Adminhtml\BtnForm\Edit\SaveButton"/>
+            <button name="delete" class="Product\Content\Block\Adminhtml\BtnForm\Edit\DeleteButton"/>
+            <button name="back" class="Product\Content\Block\Adminhtml\BtnForm\Edit\BackButton"/>
+        </buttons>
+        <namespace>product_content_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>product_content_form.product_content_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="product_content_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="product/content/save"/>
+        </settings>
+        <dataProvider class="Product\Content\Model\Config\DataProvider" name="product_content_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_content</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+        <field name="is_active" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_content</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>boolean</dataType>
+                <label translate="true">Enable Content</label>
+                <dataScope>is_active</dataScope>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="display_area" sortOrder="20" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_content</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true">Display Area</label>
+                <dataScope>display_area</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Product\Content\Model\Config\DisplayArea"/>
+                        <caption translate="true">-- Please Select --</caption>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="product_id"  sortOrder="25" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_content</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <disabled>true</disabled>
+                <dataType>text</dataType>
+                <label translate="true">Product ID</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="content" sortOrder="40" formElement="wysiwyg" template="ui/form/field">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">product_content</item>
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                        <item name="toggle_button" xsi:type="boolean">true</item>
+                        <item name="height" xsi:type="string">200px</item>
+                        <item name="add_variables" xsi:type="boolean">true</item>
+                        <item name="add_widgets" xsi:type="boolean">true</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Review Detail</label>
+                <dataScope>content</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <rows>5</rows>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
+    </fieldset>
+    <fieldset name="modal_listing" >
+        <settings>
+            <level>1</level>
+            <collapsible>true</collapsible>
+            <label translate="true">Fieldset with listing</label>
+        </settings>
+        <button name="insert_listing_product_modal_button" component="Magento_Ui/js/form/components/button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="buttonClasses" xsi:type="string">open-insert-listing-example-modal-button</item>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_listing_product_modal.insert_listing_product_loader</item>
+                            <item name="actionName" xsi:type="string">destroyInserted</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_listing_product_modal</item>
+                            <item name="actionName" xsi:type="string">openModal</item>
+                        </item>
+                        <item name="2" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_listing_product_modal.insert_listing_product_loader</item>
+                            <item name="actionName" xsi:type="string">render</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <title translate="true">Get Product Id</title>
+            </settings>
+        </button>
+        <modal name="insert_listing_product_modal">
+            <settings>
+                <options>
+                    <option name="title" xsi:type="string">Listing Product</option>
+                </options>
+            </settings>
+            <insertListing name="insert_listing_product" >
+                <settings>
+                    <dataLinks>
+                        <exports>false</exports>
+                        <imports>true</imports>
+                    </dataLinks>
+                    <autoRender>true</autoRender>
+                    <selectionsProvider>insert_listing_product.insert_listing_product.columns.ids</selectionsProvider>
+                    <dataScope>insert_listing_product</dataScope>
+                    <ns>insert_listing_product</ns>
+                </settings>
+            </insertListing>
+        </modal>
+    </fieldset>
+</form>

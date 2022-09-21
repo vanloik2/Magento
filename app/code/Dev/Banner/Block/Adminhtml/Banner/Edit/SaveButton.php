@@ -37,12 +37,12 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
             ],
             'class_name' => Container::SPLIT_BUTTON,
             'sort_order' => 90,
-            'dropdown_button_aria_label' => __('Save options'),
+            'dropdown_button_aria_label' => __('Save options.js'),
         ];
     }
 
     /**
-     * Retrieve options
+     * Retrieve options.js
      *
      * @return array
      */

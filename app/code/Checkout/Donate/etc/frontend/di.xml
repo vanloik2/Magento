@@ -8,4 +8,9 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Checkout\Model\Session\Proxy">
+        <arguments>
+            <argument name="checkoutSession" xsi:type="object">Checkout\Donate\Controller\Donate\RemoveCustomDonate</argument>
+        </arguments>
+    </type>
 </config>

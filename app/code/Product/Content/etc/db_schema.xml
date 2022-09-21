@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="product_content" resource="default" engine="innodb" comment="Product Content Table">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment= "ID"/>
+        <column xsi:type="int" name="is_active" unsigned="true" nullable="false" identity="false" comment="Is Active"/>
+        <column xsi:type="int" name="display_area" unsigned="true" nullable="false" identity="false" comment="Display"/>
+        <column xsi:type="text" name="content" nullable="false" comment="Content"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" identity="false" comment="Product Id"/>
+        <column xsi:type="text" name="product_sku" nullable="false" comment="Product Sku"/>
+        <column xsi:type="text" name="product_name" nullable="false" comment="Product Name"/>
+        <column xsi:type="datetime" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="true" comment="Created"/>
+        <column xsi:type="datetime" name="updated_at" on_update="false" nullable="true" comment="Updated"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

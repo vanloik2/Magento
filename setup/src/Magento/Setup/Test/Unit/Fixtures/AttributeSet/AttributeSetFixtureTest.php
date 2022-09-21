@@ -113,7 +113,7 @@ class AttributeSetFixtureTest extends TestCase
             ->with($attributeGroupMock)
             ->willReturn($attributeGroupMock);
 
-        // Mock CustomDonate
+        // Mock Attributes
         $attributeMock = $this->getMockBuilder(ProductAttributeInterface::class)
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();

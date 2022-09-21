@@ -14,7 +14,7 @@ use Magento\ImportExport\Model\Import\ErrorProcessing\ProcessingErrorAggregatorI
 class CustomerCompositeTest extends \PHPUnit\Framework\TestCase
 {
     /**#@+
-     * CustomDonate used in test assertions
+     * Attributes used in test assertions
      */
     const ATTRIBUTE_CODE_FIRST_NAME = 'firstname';
 
