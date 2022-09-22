@@ -48,10 +48,11 @@
                                                                                     <item name="dataScope" xsi:type="string">shippingAddress.custom_donate</item>
                                                                                     <item name="label" xsi:type="string" translate="true">Amount Donate</item>
                                                                                     <item name="sortOrder" xsi:type="string">1</item>
-                                                                                    <item name="validation" xsi:type="array">
-                                                                                        <item name="validate-number" xsi:type="boolean">true</item>
-                                                                                        <item name="validate-number-range" xsi:type="string">0-999999999</item>
-                                                                                    </item>
+                                                                                    <item name="value" xsi:type="number">0</item>
+<!--                                                                                    <item name="validation" xsi:type="array">-->
+<!--                                                                                        <item name="validate-number" xsi:type="boolean">true</item>-->
+<!--                                                                                        <item name="validate-number-range" xsi:type="string">0-999999999</item>-->
+<!--                                                                                    </item>-->
                                                                                 </item>
                                                                             </item>
                                                                         </item>

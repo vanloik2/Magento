@@ -46,13 +46,15 @@ define(
               return value;
             },
             // -- use configProvider get quoteId --
-            // getParamUrl: function (){
-            //     var configValues = window.checkoutConfig;
-            //     return configValues.quoteItemData[0]['quote_id'];
-            // },
+            getParamUrl: function (){
+                var configValues = window.checkoutConfig;
+                // return configValues.quoteItemData[0]['quote_id'];
+                console.log(configValues.quoteItemData);
+            },
             // + '/id/' + this.getParamUrl()
             // Handle remove CustomDonate
             removeCustomDonate: function () {
+                this.getParamUrl()
                 var url = urlBuilder.build(URL_CONTROLLER_HANDLE)
                 $.ajax({
                     url: url,

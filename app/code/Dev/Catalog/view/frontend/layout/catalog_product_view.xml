@@ -8,6 +8,7 @@
             <block class="Dev\Catalog\Block\Product\ExReviewTab" name="expert-review.tab" template="Dev_Catalog::product/expert_review_tab.phtml" group="detailed_info" >
                 <arguments>
                     <argument translate="true" name="title" xsi:type="string">Expert Review</argument>
+                    <argument name="sort_order" xsi:type="string">500</argument>
                 </arguments>
             </block>
         </referenceBlock>

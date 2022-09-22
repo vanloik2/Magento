@@ -1,5 +1,5 @@
 <?php
-namespace Checkout\Donate\Model\Totals;
+namespace Product\Content\Model\HandleTotalsCheckout;
 
 use Magento\Quote\Model\Quote\Address\Total\AbstractTotal;
 use Magento\Quote\Model\Quote;
@@ -7,7 +7,7 @@ use Magento\Quote\Api\Data\ShippingAssignmentInterface;
 use Magento\Quote\Model\Quote\Address\Total;
 
 
-class CustomDonate extends AbstractTotal
+class HanldeShipping extends AbstractTotal
 {
 
     protected $quoteValidator = null;
@@ -28,11 +28,11 @@ class CustomDonate extends AbstractTotal
     {
         parent::collect($quote, $shippingAssignment, $total);
 
-            $balance = $quote['custom_donate'] ;
-            $total->setTotalAmount($this->getCode(), $balance);
-            $total->setBaseTotalAmount($this->getCode(), $balance);
+            $feeShip = 0 ;
+            $total->setTotalAmount($this->getCode(), $feeShip);
+            $total->setBaseTotalAmount($this->getCode(), $feeShip);
 
-            return $this;
+        return $this;
     }
 
     // get value use for templates

@@ -33,7 +33,7 @@ class ProductActions extends Column
             $storeId = $this->context->getFilterParam('store_id');
 
             foreach ($dataSource['data']['items'] as &$item) {
-                $item[$this->getData('name')]['edit'] = [
+                $item[$this->getData('name')]['choose'] = [
                     'href' => $this->urlBuilder->getUrl(
                         'product/content/choose',
                         ['id' => $item['entity_id'], 'store' => $storeId]

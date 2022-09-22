@@ -8,10 +8,14 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Quote\Model\Quote\Address\Rate">
+        <plugin name="check_shipping_method" type="Product\Content\Plugin\Quote\Address\Rate" disabled="false" sortOrder="3"/>
+    </type>
     <virtualType name="Product\Content\Model\ResourceModel\ProductContent\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">product_content</argument>
             <argument name="resourceModel" xsi:type="string">Product\Content\Model\ResourceModel\ProductContent</argument>
         </arguments>
     </virtualType>
+
 </config>

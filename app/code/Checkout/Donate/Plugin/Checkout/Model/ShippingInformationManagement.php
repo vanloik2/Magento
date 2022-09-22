@@ -1,6 +1,7 @@
 <?php
 namespace Checkout\Donate\Plugin\Checkout\Model;
 use Magento\Quote\Model\QuoteRepository;
+use Magento\Framework\Exception\NoSuchEntityException;
 
 class ShippingInformationManagement
 {
@@ -14,6 +15,9 @@ class ShippingInformationManagement
         $this->quoteRepository = $quoteRepository;
     }
 
+    /**
+     * @throws NoSuchEntityException
+     */
     public function beforeSaveAddressInformation(
         \Magento\Checkout\Model\ShippingInformationManagement $subject,
                                                               $cartId,
@@ -29,10 +33,13 @@ class ShippingInformationManagement
         // Add custom donate to table quote
         $vlDonate = $extAttributes->getCustomDonate();
         //Check value if $ctDonate < 0 -> $ctDonate = 0
-
-        if($vlDonate < 0){
-            $quote->setCustomDonate(0);
-        }else{
+        if ($vlDonate < 0|| !is_numeric($vlDonate)
+        ) {
+            $errorMessage =  __('Custom Donate is not valid.');
+            throw new NoSuchEntityException(
+                $errorMessage
+            );
+        } else{
             $quote->setCustomDonate($vlDonate);
         }
     }

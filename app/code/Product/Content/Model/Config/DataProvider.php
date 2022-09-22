@@ -56,7 +56,7 @@ class DataProvider extends ModifierPoolDataProvider
             $this->loadedData[$proct->getId()] = $proct->getData();
             $this->dataPersistor->clear('product_content');
         }
-//        dd($this->loadedData);
+
         return $this->loadedData;
     }
 
