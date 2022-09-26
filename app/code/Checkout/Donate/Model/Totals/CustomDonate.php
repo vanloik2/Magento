@@ -35,7 +35,7 @@ class CustomDonate extends AbstractTotal
             return $this;
     }
 
-    // get value use for templates
+    // get value use for template
     public function fetch(Quote $quote, Total $total): array
     {
         return[

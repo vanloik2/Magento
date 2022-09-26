@@ -9,9 +9,10 @@ use Magento\Quote\Model\Quote\Item;
 
 class Rate
 {
+    const TITLE_SHIPPING = 'Free Shipping';
+    const PRICE_SHIPPING = 0;
 
     private $session;
-
     private $scopeConfig;
 
     public function __construct
@@ -33,11 +34,11 @@ class Rate
 
             if($checkProductFree == 1 || $checkTotals){
                 $result->setPrice(
-                    '0'
+                    self::PRICE_SHIPPING
                 )->setMethodTitle(
-                    'Free Shipping'
+                    self::TITLE_SHIPPING
                 )->setCarrierTitle(
-                    'Free Shipping'
+                    self::TITLE_SHIPPING
                 );
             }
         }

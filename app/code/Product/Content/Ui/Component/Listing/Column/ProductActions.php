@@ -35,8 +35,8 @@ class ProductActions extends Column
             foreach ($dataSource['data']['items'] as &$item) {
                 $item[$this->getData('name')]['choose'] = [
                     'href' => $this->urlBuilder->getUrl(
-                        'product/content/choose',
-                        ['id' => $item['entity_id'], 'store' => $storeId]
+                        'product/content/edit',
+                        ['product_id' => $item['entity_id'], 'store' => $storeId]
                     ),
                     'ariaLabel' => __('Choose ') . $item['name'],
                     'label' => __('Choose'),

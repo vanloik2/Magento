@@ -17,5 +17,4 @@
             <argument name="resourceModel" xsi:type="string">Product\Content\Model\ResourceModel\ProductContent</argument>
         </arguments>
     </virtualType>
-
 </config>
