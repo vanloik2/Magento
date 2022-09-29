@@ -308,18 +308,18 @@
                     <option name="title" xsi:type="string">Insert Listing Modal</option>
                 </options>
             </settings>
-            <insertListing name="insert_listing_example" >
+            <insertForm name="insert_listing_example_loader">
                 <settings>
-                    <dataLinks>
-                        <exports>false</exports>
-                        <imports>true</imports>
-                    </dataLinks>
-                    <autoRender>true</autoRender>
-                    <selectionsProvider>insert_listing_example.insert_listing_example.columns.ids</selectionsProvider>
-                    <dataScope>insert_listing_example</dataScope>
+                    <formSubmitType>ajax</formSubmitType>
+                    <renderUrl path="mui/index/render">
+                        <param name="handle">insert_listing_example</param>
+                        <param name="buttons">1</param>
+                    </renderUrl>
+                    <loading>false</loading>
+                    <toolbarContainer>${ $.parentName }</toolbarContainer>
                     <ns>insert_listing_example</ns>
                 </settings>
-            </insertListing>
+            </insertForm>
         </modal>
     </fieldset>
 </form>

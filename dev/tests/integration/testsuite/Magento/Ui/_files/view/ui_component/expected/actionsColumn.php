@@ -13,8 +13,8 @@ return [
                     'name' => 'config',
                     'xsi:type' => 'array',
                     'item' => [
-                        'template' => [
-                            'name' => 'template',
+                        'templates' => [
+                            'name' => 'templates',
                             'xsi:type' => 'array',
                             'item' => [
                                 'actions' => [

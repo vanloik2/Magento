@@ -1,9 +1,20 @@
-<p id="btn" ><span  data-bind="text: Btn(), click: HelloWorld"></span></p>
+<p  data-bind="text: 'Choose'"
+    attr="{
+            id: index + 'check1' + $row()[$col.indexField]
+        }"
+    visible="$col.selected()[0] !== $row()[$col.indexField]"
+    click="select.bind($data, $row()[$col.indexField], false)"
+    class="btn"
+></p>
 
 <style>
-    #btn{
-        cursor: pointer;
-        text-align: left;
+    .btn{
         color: blue;
+        margin-left: 10px;
+    }
+    .btn:hover{
+        color: red;
     }
 </style>
+
+

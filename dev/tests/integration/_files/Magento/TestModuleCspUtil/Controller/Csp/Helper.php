@@ -12,7 +12,7 @@ use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
- * .phtml template utilizes CSP helper.
+ * .phtml templates utilizes CSP helper.
  */
 class Helper extends Action
 {

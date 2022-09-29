@@ -44,8 +44,6 @@ class DataProvider extends ModifierPoolDataProvider
 
             $data = $proct->getData();
 
-            //Change data info product -> original data
-
             $this->loadedData[$proct->getId()] = $data;
         }
 

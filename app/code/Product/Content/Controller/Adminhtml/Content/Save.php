@@ -3,7 +3,9 @@
 namespace Product\Content\Controller\Adminhtml\Content;
 
 use Magento\Backend\App\Action;
+use Magento\Catalog\Model\Product;
 use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\App\ObjectManager;
 use Product\Content\Model\ProductContent;
 
 class Save extends Action implements HttpPostActionInterface
@@ -27,19 +29,13 @@ class Save extends Action implements HttpPostActionInterface
             }else{
                 $data['updated_at'] = date('Y-m-d H:i:s');
             }
+            // Set info product for data
+            $objectManager = ObjectManager::getInstance();
+            $product = $objectManager->create(Product::class)->load($data['entity_id']);
 
-            //Customize product sku & product name & product id => json
+            $data['product_name'] = $product->getName();
+            $data['product_sku'] = $product->getSku();
 
-            if(!empty($data['insert_listing_product'])){
-
-                $infProduct = $data['insert_listing_product'];
-                foreach ($infProduct as $item){
-                    $data['product_id'] = $item['entity_id'];
-                    $data['product_name'] = $item['name'];
-                    $data['product_sku'] = $item['sku'];
-                }
-
-            }
             $model = $this->_objectManager->create(ProductContent::class);
 
             $model->setData($data);

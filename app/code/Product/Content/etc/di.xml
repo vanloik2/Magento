@@ -17,4 +17,9 @@
             <argument name="resourceModel" xsi:type="string">Product\Content\Model\ResourceModel\ProductContent</argument>
         </arguments>
     </virtualType>
+    <type name="Product\Content\ViewModel\ProductContent">
+        <arguments>
+            <argument name="templateProcessor" xsi:type="object">Magento\Widget\Model\Template\Filter</argument>
+        </arguments>
+    </type>
 </config>

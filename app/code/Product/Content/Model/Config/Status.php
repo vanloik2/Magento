@@ -9,7 +9,7 @@ class Status implements ArrayInterface
     {
         return [
             ['value' => 1, 'label' => __('Enabled')],
-            ['value' => 2, 'label' => __('Disabled')],
+            ['value' => 0, 'label' => __('Disabled')],
         ];
     }
 }

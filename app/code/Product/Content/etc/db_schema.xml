@@ -6,7 +6,7 @@
         <column xsi:type="int" name="is_active" unsigned="true" nullable="false" identity="false" comment="Is Active"/>
         <column xsi:type="int" name="display_area" unsigned="true" nullable="false" identity="false" comment="Display"/>
         <column xsi:type="text" name="content" nullable="false" comment="Content"/>
-        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" identity="false" comment="Product Id"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="false" comment="Product Id"/>
         <column xsi:type="text" name="product_sku" nullable="false" comment="Product Sku"/>
         <column xsi:type="text" name="product_name" nullable="false" comment="Product Name"/>
         <column xsi:type="datetime" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="true" comment="Created"/>

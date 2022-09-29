@@ -1,23 +1,45 @@
 define([
-    'underscore',
-    'mageUtils',
-    'uiRegistry',
-    'Magento_Ui/js/grid/columns/column',
-    'Magento_Ui/js/modal/confirm',
-    'mage/dataPost',
-    'jquery'
-], function (_, utils, registry, Column, confirm, dataPost, $) {
+    'Magento_Ui/js/grid/columns/multiselect',
+    'underscore'
+], function (Select, _) {
     'use strict';
-    return Column.extend({
+
+    return Select.extend({
         defaults: {
+            headerTmpl: 'ui/grid/columns/text',
             bodyTmpl: 'Product_Content/grid/cells/insert-listing',
+            label: '',
+            extendedSelections: [],
+            lastSelected: null,
+            listens: {
+                selected: 'onSelectedChange setExtendedSelections'
+            }
         },
-        Btn: function (){
-            return 'Choose'
+
+        initObservable: function () {
+            this._super()
+                .observe('extendedSelections lastSelected');
+
+            return this;
         },
-        HelloWorld: function (){
-            alert('abc')
-            alert(dataPost.valueOf())
+
+        select: function (id) {
+            this._super();
+            this.lastSelected(id);
+            console.log(id)
+            return this;
+        },
+
+        _setSelection: function (id, isIndex, select) {
+            var selected = this.selected;
+
+            id = this.getId(id, isIndex);
+            if (!select && this.isSelected(id)) {
+                selected([]);
+            } else if (select) {
+                selected([id]);
+            }
+            return this;
         }
     });
 });

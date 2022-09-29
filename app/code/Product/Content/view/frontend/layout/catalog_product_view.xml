@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceBlock name="product.info.details">
-<!--        <block class="Product\Content\Block\Product\TabDetails"  name="product.info.content.top" template="Product_Content::product/view/content_product.phtml" group="detailed_info"/>-->
-<!--        <referenceBlock name="product.info.description">-->
-<!--           <block class="Product\Content\Block\Product\TabDetails" as="content" name="product.info.content.top" template="Product_Content::product/view/content_product.phtml" group="detailed_info"/>-->
-<!--            <arguments>-->
-<!--                <argument name="title" translate="true" xsi:type="string">Details</argument>-->
-<!--            </arguments>-->
-<!--        </referenceBlock>-->
+    <referenceBlock name="product.info.description" template="Product_Content::product/view/content_product.phtml">
+        <arguments>
+            <argument name="view_model" xsi:type="object">Product\Content\ViewModel\ProductContent</argument>
+        </arguments>
     </referenceBlock>
 </page>

@@ -45,8 +45,8 @@ return [
                                 ],
                             ],
                         ],
-                        'template' => [
-                            'name' => 'template',
+                        'templates' => [
+                            'name' => 'templates',
                             'xsi:type' => 'array',
                             'item' => [
                                 'filters' => [
